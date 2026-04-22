@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://bv0ifbha5liqj"]
 
+[ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_lquv2"]
+[ext_resource type="Texture2D" uid="uid://cf66jhu8wxat0" path="res://icon.svg" id="2_8cqlv"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwrm4"]
 
 [node name="Topi" type="CharacterBody2D" unique_id=2049850128]
+script = ExtResource("1_lquv2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1986594708]
+position = Vector2(385, 77)
+texture = ExtResource("2_8cqlv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17371477]
 shape = SubResource("CapsuleShape2D_fwrm4")
