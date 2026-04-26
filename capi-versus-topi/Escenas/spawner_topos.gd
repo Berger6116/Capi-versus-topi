@@ -11,6 +11,10 @@ func _ready() -> void:
 	
 func _on_timer_timeout() -> void:
 	generar_topo()
+	#GENERAR ALEATORIEDAD PARA EL TIMER
+	var nuevo_tiempo = randf_range(5.0, 8.0)
+	#ASIGNAR EL NUEVO TIEMPO AL RELOJ:
+	$TimerOleada.wait_time = nuevo_tiempo
 	
 func generar_topo() -> void:
 	#LE INDICAMOS A LA FABRICA QUE CREE UN ENEMIGO
