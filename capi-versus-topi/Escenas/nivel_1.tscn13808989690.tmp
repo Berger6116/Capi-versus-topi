@@ -18,7 +18,7 @@ position = Vector2(516, 621)
 scale = Vector2(0.52, 0.52)
 
 [node name="Topi" parent="." unique_id=2049850128 instance=ExtResource("4_3c2k2")]
-position = Vector2(2329.9998, 626)
+position = Vector2(1731, 626)
 scale = Vector2(0.39999938, 0.39999938)
 
 [node name="Topi2" parent="." unique_id=1709058444 instance=ExtResource("4_3c2k2")]

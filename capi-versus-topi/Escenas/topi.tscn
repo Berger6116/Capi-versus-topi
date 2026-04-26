@@ -1,10 +1,32 @@
 [gd_scene format=3 uid="uid://bv0ifbha5liqj"]
 
+[ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_8cqlv"]
+[ext_resource type="Texture2D" uid="uid://u6lsdc8jrlbh" path="res://Assets/topo.png" id="2_80y2p"]
+[ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80y2p"]
+size = Vector2(27.186756, 45.129875)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwrm4"]
+radius = 13.983052
+height = 43.14024
 
 [node name="Topi" type="CharacterBody2D" unique_id=2049850128]
+script = ExtResource("1_8cqlv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1986594708]
+texture = ExtResource("2_80y2p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17371477]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2046681861]
+position = Vector2(-0.9999981, -13)
+scale = Vector2(16.920004, 12.32)
+shape = SubResource("RectangleShape2D_80y2p")
+metadata/_edit_lock_ = true
+
+[node name="GestorDeHp" parent="." unique_id=701457431 instance=ExtResource("3_80y2p")]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GestorDeHp" unique_id=17371477]
+position = Vector2(-2, -6.000002)
+scale = Vector2(16.519999, 13.68)
 shape = SubResource("CapsuleShape2D_fwrm4")
+metadata/_edit_lock_ = true
