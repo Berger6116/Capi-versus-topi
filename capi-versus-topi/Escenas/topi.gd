@@ -17,3 +17,4 @@ func morir() -> void:
 	GameManager.sumar_puntaje_topos()
 	
 	queue_free()
+#hola
