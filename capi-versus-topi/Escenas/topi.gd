@@ -1,15 +1,19 @@
 extends CharacterBody2D
+#RECORDAR: ESTAN MUY GRANDES LOS SPRITES, 
+#SI LOS ACHICAMOS VOLVER A ESCALAR AL TOPI DESDE EL CHARACTERBODY
+#AHORA ESTA EN 0.4 SCALE
+class_name Topi
 
-var velocidad : float =100.0
-var salud: int = 3
+var vida: int = 30
 
 func _physics_process(delta: float) -> void:
-	velocity.x = -velocidad
+	velocity = Vector2(-80, 0)
 	move_and_slide()
 	
-func recibir_dano (cantidad:int):
-	salud-=cantidad
+func morir() -> void:
+	print("Topi derrotado!")
 	
-	if salud <= 0:
-		GameManager.sumar_puntaje (10)
-		queue_free()
+	#AVISA AL GAME MANAGER SUMAR PUNTAJE
+	GameManager.sumar_puntaje_topos()
+	
+	queue_free()
