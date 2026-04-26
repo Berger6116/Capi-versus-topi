@@ -27,6 +27,7 @@ scale = Vector2(268.24, 10.559999)
 shape = SubResource("RectangleShape2D_axr24")
 
 [node name="TimerDisparo" type="Timer" parent="." unique_id=918052501]
+wait_time = 2.0
 
 [connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
 [connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]

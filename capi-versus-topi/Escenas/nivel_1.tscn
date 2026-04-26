@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="2_hid1b"]
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_os1ql"]
 [ext_resource type="PackedScene" uid="uid://bv0ifbha5liqj" path="res://Escenas/topi.tscn" id="4_3c2k2"]
+[ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
 
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
@@ -28,3 +29,10 @@ scale = Vector2(0.39999938, 0.39999938)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1741267232]
 position = Vector2(961, 541)
 metadata/_edit_lock_ = true
+
+[node name="SpawnerTopos" type="Marker2D" parent="." unique_id=2042843427]
+position = Vector2(3083, 626)
+script = ExtResource("5_lswwr")
+
+[node name="TimerOleada" type="Timer" parent="SpawnerTopos" unique_id=675300901]
+wait_time = 6.0
