@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://oss0oifa7j6s"]
+
+[ext_resource type="Texture2D" uid="uid://dfk8wpytue2q2" path="res://botones/portada (1).jpeg" id="1_3lx1v"]
+[ext_resource type="Texture2D" uid="uid://ckpdvisotv3dy" path="res://botones/WhatsApp_Image_2026-04-25_at_21.51.07-removebg-preview.png" id="1_dpb47"]
+[ext_resource type="Texture2D" uid="uid://we7jn5gxwxv0" path="res://botones/WhatsApp_Image_2026-04-25_at_20.39.07-removebg-preview.png" id="2_3lx1v"]
+[ext_resource type="Texture2D" uid="uid://dxo4dh8gqrlok" path="res://botones/WhatsApp_Image_2026-04-25_at_21.48.26-removebg-preview.png" id="3_3lx1v"]
+[ext_resource type="Texture2D" uid="uid://bd2t7mcw4wfl4" path="res://botones/WhatsApp_Image_2026-04-25_at_20.40.51-removebg-preview.png" id="4_a6qpq"]
+[ext_resource type="Texture2D" uid="uid://jcwwlf718xiw" path="res://botones/WhatsApp_Image_2026-04-25_at_20.41.30-removebg-preview.png" id="5_0hhtg"]
+[ext_resource type="Texture2D" uid="uid://db7pj7kyoduei" path="res://botones/WhatsApp_Image_2026-04-25_at_21.50.27-removebg-preview.png" id="6_2rkoq"]
+[ext_resource type="Texture2D" uid="uid://b75tm3b1n518g" path="res://botones/WhatsApp_Image_2026-04-25_at_20.58.57-removebg-preview.png" id="7_3k44r"]
+[ext_resource type="Texture2D" uid="uid://b5bwhrb48q3lq" path="res://botones/WhatsApp_Image_2026-04-25_at_20.53.10-removebg-preview.png" id="8_7rk86"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a6qpq"]
+load_path = "res://.godot/imported/Captura de pantalla 2026-04-19 200325-Photoroom.png-4fca0abdc39b056b1455116ddf139ff4.ctex"
+
+[node name="munu" type="Control" unique_id=1393137266]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=49650398]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1452662, 0.1452662, 0.1452662, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1230759747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3lx1v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=808263735]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -332.5
+offset_top = -793.0
+offset_right = 332.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer" unique_id=676534836]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_dpb47")
+texture_pressed = SubResource("CompressedTexture2D_a6qpq")
+texture_hover = ExtResource("2_3lx1v")
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer" unique_id=1640929549]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_3lx1v")
+texture_pressed = ExtResource("4_a6qpq")
+texture_hover = ExtResource("5_0hhtg")
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer" unique_id=1261683250]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_2rkoq")
+texture_pressed = ExtResource("7_3k44r")
+texture_hover = ExtResource("8_7rk86")
