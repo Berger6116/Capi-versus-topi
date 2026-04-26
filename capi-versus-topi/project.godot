@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="capi-versus-topi"
-run/main_scene="uid://bv0ifbha5liqj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
