@@ -12,4 +12,8 @@ func _physics_process(delta: float) -> void:
 	
 func morir() -> void:
 	print("Topi derrotado!")
+	
+	#AVISA AL GAME MANAGER SUMAR PUNTAJE
+	GameManager.sumar_puntaje_topos()
+	
 	queue_free()
