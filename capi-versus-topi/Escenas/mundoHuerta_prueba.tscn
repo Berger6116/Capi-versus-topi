@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://duenmj8ivln36"]
+
+[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_1tbuh"]
+
+[node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=627682134]
+position = Vector2(1763, 540)
+texture = ExtResource("1_1tbuh")
+metadata/_edit_lock_ = true
