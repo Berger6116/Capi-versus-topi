@@ -13,6 +13,7 @@ height = 43.14024
 
 [node name="Topi" type="CharacterBody2D" unique_id=2049850128]
 scale = Vector2(0.4, 0.4)
+collision_mask = 0
 script = ExtResource("1_8cqlv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1986594708]
