@@ -29,7 +29,8 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://Escenas/": "red",
 "res://Scrips/": "orange",
-"res://botones/": "green"
+"res://botones/": "green",
+"res://credito/": "pink"
 }
 
 [physics]
