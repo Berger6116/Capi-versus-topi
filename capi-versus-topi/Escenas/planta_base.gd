@@ -35,8 +35,10 @@ func regar() -> void:
 	if fase_actual == FasePlanta.BROTE:
 		fase_actual = FasePlanta.CRECIENDO
 		actualizar_dibujo()
+		GameManager.sumar_monedas_huerta(10)
 	elif fase_actual == FasePlanta.CRECIENDO:
 		fase_actual = FasePlanta.COSECHABLE
+		GameManager.sumar_monedas_huerta(20)
 		actualizar_dibujo()
 
 func cosechar() -> bool:
