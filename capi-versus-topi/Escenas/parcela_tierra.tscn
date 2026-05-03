@@ -17,5 +17,3 @@ position = Vector2(2, -1.5)
 scale = Vector2(4.7199993, 1)
 shape = SubResource("RectangleShape2D_e1oio")
 metadata/_edit_lock_ = true
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]

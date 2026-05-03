@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://csmiu54y2uyng" path="res://Escenas/parcela_tierra.tscn" id="3_lt0pu"]
 [ext_resource type="Script" uid="uid://c3x61rlevibot" path="res://Escenas/botones_huerta.gd" id="4_ws310"]
 [ext_resource type="Texture2D" uid="uid://ctkca6ed1b4j0" path="res://Assets/semillas.PNG" id="5_h2qel"]
-[ext_resource type="Texture2D" uid="uid://dqcmv62csika7" path="res://Assets/regadera.PNG" id="5_ws310"]
-[ext_resource type="Texture2D" uid="uid://bb8rwsfmvrpea" path="res://Assets/canasta.PNG" id="6_h2qel"]
 
 [node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
 
@@ -42,21 +40,4 @@ offset_right = 927.0
 offset_bottom = 305.0
 texture_normal = ExtResource("5_h2qel")
 
-[node name="BotonRegadera" type="TextureButton" parent="BotonesHuerta" unique_id=770475113]
-offset_left = 1019.0
-offset_top = 40.0
-offset_right = 1452.0
-offset_bottom = 411.0
-scale = Vector2(0.71999997, 0.72000027)
-texture_normal = ExtResource("5_ws310")
-
-[node name="BotonCanasta" type="TextureButton" parent="BotonesHuerta" unique_id=296826588]
-offset_left = 1373.0
-offset_top = 40.0
-offset_right = 1680.0
-offset_bottom = 310.0
-texture_normal = ExtResource("6_h2qel")
-
 [connection signal="button_down" from="BotonesHuerta/BotonSemillas" to="BotonesHuerta" method="_on_boton_semillas_button_down"]
-[connection signal="button_down" from="BotonesHuerta/BotonRegadera" to="BotonesHuerta" method="_on_boton_regadera_button_down"]
-[connection signal="button_down" from="BotonesHuerta/BotonCanasta" to="BotonesHuerta" method="_on_boton_canasta_button_down"]
