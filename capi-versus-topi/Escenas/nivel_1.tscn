@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_os1ql"]
 [ext_resource type="PackedScene" uid="uid://bv0ifbha5liqj" path="res://Escenas/topi.tscn" id="4_3c2k2"]
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
+[ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
 
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
@@ -36,3 +37,16 @@ script = ExtResource("5_lswwr")
 
 [node name="TimerOleada" type="Timer" parent="SpawnerTopos" unique_id=675300901]
 wait_time = 6.0
+
+[node name="MundoHuertaPrueba" parent="." unique_id=757438057 instance=ExtResource("6_llk6u")]
+
+[node name="Victoria" type="CanvasLayer" parent="." unique_id=1839328495]
+visible = false
+
+[node name="Label" type="Label" parent="Victoria" unique_id=1086187785]
+offset_left = 798.0
+offset_top = 370.0
+offset_right = 1323.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 52
+text = "Nivel 1 completado!!!"
