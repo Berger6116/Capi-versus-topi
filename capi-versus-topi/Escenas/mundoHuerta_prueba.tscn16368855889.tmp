@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://duenmj8ivln36"]
+
+[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_1tbuh"]
+[ext_resource type="PackedScene" uid="uid://csmiu54y2uyng" path="res://Escenas/parcela_tierra.tscn" id="3_lt0pu"]
+[ext_resource type="Script" uid="uid://c3x61rlevibot" path="res://Escenas/botones_huerta.gd" id="4_ws310"]
+[ext_resource type="Texture2D" uid="uid://ctkca6ed1b4j0" path="res://Assets/semillas.PNG" id="5_h2qel"]
+
+[node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=627682134]
+position = Vector2(1763, 540)
+texture = ExtResource("1_1tbuh")
+metadata/_edit_lock_ = true
+
+[node name="parcelaTierra6" parent="." unique_id=1817082500 instance=ExtResource("3_lt0pu")]
+position = Vector2(912, 696)
+
+[node name="parcelaTierra3" parent="." unique_id=1681226325 instance=ExtResource("3_lt0pu")]
+position = Vector2(786, 695)
+
+[node name="parcelaTierra5" parent="." unique_id=1816717725 instance=ExtResource("3_lt0pu")]
+position = Vector2(855, 735)
+
+[node name="parcelaTierra2" parent="." unique_id=1798375435 instance=ExtResource("3_lt0pu")]
+position = Vector2(729, 734)
+
+[node name="parcelaTierra4" parent="." unique_id=1213065538 instance=ExtResource("3_lt0pu")]
+position = Vector2(798, 776)
+
+[node name="parcelaTierra" parent="." unique_id=1531952277 instance=ExtResource("3_lt0pu")]
+position = Vector2(672, 775)
+
+[node name="BotonesHuerta" type="CanvasLayer" parent="." unique_id=177640428]
+script = ExtResource("4_ws310")
+
+[node name="BotonSemillas" type="TextureButton" parent="BotonesHuerta" unique_id=504865737]
+offset_left = 616.0
+offset_top = 40.0
+offset_right = 927.0
+offset_bottom = 305.0
+texture_normal = ExtResource("5_h2qel")
+
+[connection signal="button_down" from="BotonesHuerta/BotonSemillas" to="BotonesHuerta" method="_on_boton_semillas_button_down"]

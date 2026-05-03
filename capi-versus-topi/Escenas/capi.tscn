@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cxw065dy06eeb"]
+
+[ext_resource type="Script" uid="uid://kisja1bd06io" path="res://Escenas/capi.gd" id="1_axr24"]
+[ext_resource type="Texture2D" uid="uid://dni5uo5fowc50" path="res://Assets/capi.png" id="2_axr24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8qvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axr24"]
+size = Vector2(11.871458, 37.878788)
+
+[node name="Capi" type="CharacterBody2D" unique_id=402564657]
+script = ExtResource("1_axr24")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176498707]
+texture = ExtResource("2_axr24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659155779]
+position = Vector2(-13, 10.000001)
+scale = Vector2(18.76, 22.960003)
+shape = SubResource("RectangleShape2D_b8qvr")
+
+[node name="AreaVision" type="Area2D" parent="." unique_id=97435840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaVision" unique_id=2307923]
+position = Vector2(1426.8, 204)
+scale = Vector2(268.24, 10.559999)
+shape = SubResource("RectangleShape2D_axr24")
+
+[node name="TimerDisparo" type="Timer" parent="." unique_id=918052501]
+wait_time = 2.0
+
+[connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
+[connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]
+[connection signal="timeout" from="TimerDisparo" to="." method="_on_timer_disparo_timeout"]
