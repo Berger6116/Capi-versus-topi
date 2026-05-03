@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://x0txvriq1014"]
+
+[ext_resource type="Script" uid="uid://bd6syvbkehs7" path="res://Escenas/planta_base.gd" id="1_002uw"]
+[ext_resource type="Texture2D" uid="uid://yq7s85mpgtpc" path="res://Assets/BG_1__planta_fase_1.png" id="2_ko18j"]
+[ext_resource type="Texture2D" uid="uid://5jbo4icfgwbh" path="res://Assets/BG_1__planta_fase_3.png" id="3_1msuh"]
+[ext_resource type="Texture2D" uid="uid://bqg18obq5db8h" path="res://Assets/BG_1__planta_fase_2.png" id="4_uskfg"]
+
+[node name="PlantaBase" type="Node2D" unique_id=2140132250]
+script = ExtResource("1_002uw")
+
+[node name="SpriteBrote" type="Sprite2D" parent="." unique_id=497856059]
+position = Vector2(0, -37)
+texture = ExtResource("2_ko18j")
+
+[node name="SpriteCreciendo" type="Sprite2D" parent="." unique_id=413237952]
+position = Vector2(6, -65)
+texture = ExtResource("3_1msuh")
+
+[node name="SpriteCosechable" type="Sprite2D" parent="." unique_id=1636813033]
+position = Vector2(5, -66)
+texture = ExtResource("4_uskfg")
