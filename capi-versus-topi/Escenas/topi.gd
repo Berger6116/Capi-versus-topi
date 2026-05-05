@@ -9,6 +9,7 @@ var estar_enojado: bool= false
 var velocidad_actual:float = -80.0
 
 func _physics_process(delta: float) -> void:
+<<<<<<< Updated upstream
 	velocity.x= velocidad_actual
 	move_and_slide()
 	
@@ -30,6 +31,25 @@ func ponerse_rojo():
 	tween.tween_property($Sprite2D, "modulate", Color (1,0,0),0.5)
 	print("Topi se enojó y ahora corre más rápido") 
 
+=======
+	velocity = Vector2(-80, 0)
+	velocity.x= velocidad_actual
+	move_and_slide()
+	if vida <= 10 and not estar_enojado:
+		ponerse_rojo()
+
+func ponerse_rojo():
+	estar_enojado = true
+	velocidad_actual= -150.0
+	
+	var tween=create_tween()#efecto visual, cambia a rojo
+	tween.tween_property($Sprite2D, "modulate", Color (1,0,0),0.5)
+	print("Topi se enojó y ahora corre más rápido") 
+	
+func recibir_danio (dmg:int) -> void:
+		vida-= dmg
+		print ("vida del topi actualizada:", vida)
+>>>>>>> Stashed changes
 
 func morir() -> void:
 	print("Topi derrotado!")

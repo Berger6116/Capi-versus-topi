@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_8cqlv"]
 [ext_resource type="Texture2D" uid="uid://u6lsdc8jrlbh" path="res://Assets/topo.png" id="2_80y2p"]
-[ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
+[ext_resource type="PackedScene" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80y2p"]
 size = Vector2(27.186756, 45.129875)

@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://dfe5y54evcp8f"]
+[gd_scene format=3 uid="uid://2l86gh7k8tyt"]
 
 [ext_resource type="Script" uid="uid://dkoh31j10h606" path="res://Escenas/nivel_1.gd" id="1_gj223"]
 [ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="2_hid1b"]
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_os1ql"]
 [ext_resource type="PackedScene" uid="uid://bv0ifbha5liqj" path="res://Escenas/topi.tscn" id="4_3c2k2"]
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
+>>>>>>> Stashed changes
 
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
