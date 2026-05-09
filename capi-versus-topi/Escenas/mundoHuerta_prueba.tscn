@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_1tbuh"]
 [ext_resource type="PackedScene" uid="uid://csmiu54y2uyng" path="res://Escenas/parcela_tierra.tscn" id="3_lt0pu"]
+[ext_resource type="Texture2D" uid="uid://sxncevr6d25t" path="res://Assets/botonSemillas.png" id="4_h2qel"]
 [ext_resource type="Script" uid="uid://c3x61rlevibot" path="res://Escenas/botones_huerta.gd" id="4_ws310"]
-[ext_resource type="Texture2D" uid="uid://ctkca6ed1b4j0" path="res://Assets/semillas.PNG" id="5_h2qel"]
-[ext_resource type="Texture2D" uid="uid://dqcmv62csika7" path="res://Assets/regadera.PNG" id="5_ws310"]
-[ext_resource type="Texture2D" uid="uid://bb8rwsfmvrpea" path="res://Assets/canasta.PNG" id="6_h2qel"]
+[ext_resource type="Texture2D" uid="uid://dtij4y2jfl1y0" path="res://Assets/botonRegadera.png" id="5_467ac"]
+[ext_resource type="Texture2D" uid="uid://cdewfpqbchsxn" path="res://Assets/botonCanasta.png" id="6_gimqf"]
+[ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="7_467ac"]
+[ext_resource type="Script" uid="uid://e4alhvcp1qsc" path="res://Escenas/puntaje_prov.gd" id="7_gimqf"]
 
 [node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
+metadata/_edit_horizontal_guides_ = [243.0, 40.0]
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=627682134]
 visible = false
@@ -37,26 +40,50 @@ position = Vector2(672, 775)
 script = ExtResource("4_ws310")
 
 [node name="BotonSemillas" type="TextureButton" parent="BotonesHuerta" unique_id=504865737]
-offset_left = 616.0
+offset_left = 693.0
 offset_top = 40.0
-offset_right = 927.0
-offset_bottom = 305.0
-texture_normal = ExtResource("5_h2qel")
+offset_right = 1032.0
+offset_bottom = 378.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_h2qel")
 
 [node name="BotonRegadera" type="TextureButton" parent="BotonesHuerta" unique_id=770475113]
-offset_left = 1019.0
+offset_left = 931.99994
 offset_top = 40.0
-offset_right = 1452.0
+offset_right = 1365.0
 offset_bottom = 411.0
-scale = Vector2(0.71999997, 0.72000027)
-texture_normal = ExtResource("5_ws310")
+scale = Vector2(0.5999975, 0.59999776)
+texture_normal = ExtResource("5_467ac")
 
 [node name="BotonCanasta" type="TextureButton" parent="BotonesHuerta" unique_id=296826588]
-offset_left = 1373.0
+offset_left = 1171.0
 offset_top = 40.0
-offset_right = 1680.0
-offset_bottom = 310.0
-texture_normal = ExtResource("6_h2qel")
+offset_right = 1510.0
+offset_bottom = 378.0
+scale = Vector2(0.6000049, 0.6000049)
+texture_normal = ExtResource("6_gimqf")
+
+[node name="Puntaje_prov" type="CanvasLayer" parent="." unique_id=932468122]
+script = ExtResource("7_gimqf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Puntaje_prov" unique_id=1427725466]
+position = Vector2(225, 150)
+texture = ExtResource("7_467ac")
+
+[node name="monedas" type="Label" parent="Puntaje_prov" unique_id=502212195]
+offset_left = 248.0
+offset_top = 97.0
+offset_right = 326.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 34
+text = "0000"
+
+[node name="oleadaTopos" type="Label" parent="Puntaje_prov" unique_id=904037729]
+offset_left = 486.0
+offset_top = 97.0
+offset_right = 526.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 34
 
 [connection signal="button_down" from="BotonesHuerta/BotonSemillas" to="BotonesHuerta" method="_on_boton_semillas_button_down"]
 [connection signal="button_down" from="BotonesHuerta/BotonRegadera" to="BotonesHuerta" method="_on_boton_regadera_button_down"]

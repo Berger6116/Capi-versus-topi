@@ -28,3 +28,7 @@ func morir() -> void:
 	#AVISA AL GAME MANAGER SUMAR PUNTAJE
 	GameManager.sumar_puntaje_topos()
 	queue_free()
+
+func eliminar_todos_los_topos() -> void:
+	#los topos se eliminan al terminar el nivel
+	queue_free()
