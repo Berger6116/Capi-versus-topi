@@ -37,7 +37,4 @@ func chequear_victoria (topos_muertos: int) -> void:
 		var timer = spawner_topos.get_node("TimerOleada")
 		if timer != null:
 			timer.stop()
-		#señal para eliminar topos restantes:
-		spawner_topos.eliminar_topos_restantes.emit()
-		#mostrar cartel de victoria:
 		victoria.show()
