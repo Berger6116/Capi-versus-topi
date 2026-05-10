@@ -4,6 +4,9 @@ class_name PlantaBase
 #Para el gestor de hp:
 var vida: int = 30
 
+#Para la animacion de la moneda:
+var moneda_animacion = preload("res://Escenas/moneda_anim.tscn")
+
 #Fases de las plantas:
 enum FasePlanta { BROTE, CRECIENDO, COSECHABLE }
 
@@ -28,31 +31,45 @@ func actualizar_dibujo() -> void:
 		#SEGÚN LA FASE DE LA PLANTA SE MUESTRA EL SPRITE CORRECTO:
 		FasePlanta.BROTE:
 			sprite_brote.show()
-			print("planta brote")
+			#print("planta brote")
 		FasePlanta.CRECIENDO:
 			sprite_creciendo.show()
-			print("planta creciendo")
+			#print("planta creciendo")
 		FasePlanta.COSECHABLE:
 			sprite_cosechable.show()
-			print("planta cosechable")
+			#print("planta cosechable")
 			
 func regar() -> void:
+	
 	if fase_actual == FasePlanta.BROTE:
 		fase_actual = FasePlanta.CRECIENDO
 		actualizar_dibujo()
 		GameManager.sumar_monedas_huerta(10)
+		aparecer_moneda()
 	elif fase_actual == FasePlanta.CRECIENDO:
 		fase_actual = FasePlanta.COSECHABLE
 		GameManager.sumar_monedas_huerta(20)
 		actualizar_dibujo()
+		aparecer_moneda()
 
 func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
-		print("planta cosechada")
+		#print("planta cosechada")
 		GameManager.sumar_monedas_huerta(30)
+		aparecer_moneda()
 		return true
 	else:
 		return false
+
+func aparecer_moneda():
+	#instancia la animacion de la moneda
+	var nueva_moneda = moneda_animacion.instantiate()
+	#lo hacemos hijo de la planta
+	get_parent().add_child(nueva_moneda)
+	#le damos la posicion de la planta
+	nueva_moneda.global_position = global_position
+	print("Moneda creada en: ", global_position)
+	
 
 func morir() -> void:
 	print("el topo mató la planta")

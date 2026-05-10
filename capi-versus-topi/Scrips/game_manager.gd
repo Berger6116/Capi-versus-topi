@@ -24,12 +24,12 @@ func restar_vida():
 func sumar_puntaje_topos():
 	topos_derrotados += 1
 	actualizar_topos.emit(topos_derrotados)
-	print("topos derrotados: ", topos_derrotados)
+	#print("topos derrotados: ", topos_derrotados)
 	
 func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
-	print("Monedas Actuales: ", monedas)
+	#print("Monedas Actuales: ", monedas)
 
 func activar_game_over():
 	game_over.emit()
