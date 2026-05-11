@@ -26,7 +26,7 @@ func on_area_entered(area: Area2D) -> void:
 func recibir_danio (dmg: int) -> void:
 		actual_hp -= dmg
 		impacto_recibido.emit (actual_hp)
-		print("¡Daño recibido! vida restante : " , actual_hp)
+		#print("¡Daño recibido! vida restante : " , actual_hp)
 	
 		if get_parent().has_method("recibir_danio"): #Le avisamos al padre que se fije si tiene que ponerse rojo
 			get_parent().recibir_danio(dmg)  #Le pasamos el daño para que el scrip Topi ejecute su lógica de Tween
