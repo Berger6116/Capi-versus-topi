@@ -10,29 +10,9 @@ config_version=5
 
 [application]
 
-config/name="capi-versus-topi"
-run/main_scene="uid://bv0ifbha5liqj"
+config/name="sonido de objectos"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-GameManager="*uid://bu8c7fhustfbm"
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="canvas_items"
-
-[file_customization]
-
-folder_colors={
-"res://Escenas/": "red",
-"res://Scrips/": "orange",
-"res://botones/": "green",
-"res://credito/": "pink"
-}
 
 [physics]
 

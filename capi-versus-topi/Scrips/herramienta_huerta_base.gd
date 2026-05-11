@@ -11,7 +11,7 @@ func soltar_herramienta() -> void:
 			
 			queue_free()
 			return
-	print("acá no hay tierra para usar la herramienta")
+	#print("acá no hay tierra para usar la herramienta")
 	queue_free()
 
 #función que cada clase hija va a tener que aplicar:
