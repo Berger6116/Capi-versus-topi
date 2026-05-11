@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cadeuv7wflcnx" path="res://menu/munu.gd" id="1_0u7e5"]
 [ext_resource type="Texture2D" uid="uid://dfk8wpytue2q2" path="res://botones/portada (1).jpeg" id="2_ycqwp"]
-[ext_resource type="Texture2D" uid="uid://gngnesf5ucgq" path="res://botones/Agregar_un_título__3_-removebg-preview.png" id="3_rig5r"]
-[ext_resource type="Texture2D" uid="uid://dnjb6305tme6" path="res://botones/Agregar_un_título__2_-removebg-preview.png" id="4_kj0dl"]
-[ext_resource type="Texture2D" uid="uid://cndaenrot14s1" path="res://botones/Agregar_un_título__5_-removebg-preview.png" id="5_pjlxb"]
-[ext_resource type="Texture2D" uid="uid://7vnesjch48cc" path="res://botones/Agregar_un_título__4_-removebg-preview.png" id="6_0u7e5"]
-[ext_resource type="Texture2D" uid="uid://b4pw1ycd4havs" path="res://botones/Agregar_un_título__6_-removebg-preview.png" id="6_kj0dl"]
-[ext_resource type="Texture2D" uid="uid://m3rfxkrn0nqs" path="res://botones/Agregar_un_título__1_-removebg-preview.png" id="7_ycqwp"]
+[ext_resource type="Texture2D" uid="uid://ct0l8mhnrdepx" path="res://botones/Captura_de_pantalla_2026-04-19_200343-Photoroom__1_-removebg-preview.png" id="3_pjlxb"]
+[ext_resource type="Texture2D" uid="uid://url1vl3h0xne" path="res://botones/Gemini_Generated_Image_nxqtb9nxqtb9nxqt-removebg-preview.png" id="4_kj0dl"]
+[ext_resource type="Texture2D" uid="uid://dlp7d85s1bmck" path="res://botones/Captura_de_pantalla_2026-04-19_200325-Photoroom__1_-removebg-preview.png" id="5_0u7e5"]
+[ext_resource type="Texture2D" uid="uid://bw1t3lx6av3hn" path="res://botones/Gemini_Generated_Image_juxjmfjuxjmfjuxj-removebg-preview.png" id="6_pjlxb"]
+[ext_resource type="Texture2D" uid="uid://bwh8lfpq2yqtm" path="res://botones/Gemini_Generated_Image_dt9u80dt9u80dt9u-removebg-preview.png" id="7_0u7e5"]
+[ext_resource type="Texture2D" uid="uid://le0b1u11oesu" path="res://botones/Captura_de_pantalla_2026-04-19_200332-Photoroom__1_-removebg-preview.png" id="7_ycqwp"]
+[ext_resource type="AudioStream" uid="uid://j71n03kcx83x" path="res://musica_sfx/musica_menu.mp3" id="9_rph6x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0u7e5"]
-load_path = "res://.godot/imported/Agregar_un_título-removebg-preview.png-cb4f0ecaf8f2fa45abf1e33cb6c62742.ctex"
 
 [node name="munu" type="Control" unique_id=1393137266]
 layout_mode = 3
@@ -39,43 +39,47 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ycqwp")
 
-[node name="TextureButton3" type="TextureButton" parent="." unique_id=1261683250]
+[node name="credit" type="TextureButton" parent="." unique_id=1261683250]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 0
-offset_left = 798.0
-offset_top = 644.0
-offset_right = 1101.0
-offset_bottom = 794.0
+offset_left = 845.0
+offset_top = 549.0
+offset_right = 1106.0
+offset_bottom = 699.0
 size_flags_horizontal = 4
-texture_normal = ExtResource("4_kj0dl")
-texture_pressed = ExtResource("5_pjlxb")
-texture_hover = ExtResource("5_pjlxb")
+texture_normal = ExtResource("3_pjlxb")
+texture_pressed = ExtResource("4_kj0dl")
+texture_hover = ExtResource("4_kj0dl")
 ignore_texture_size = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=676534836]
+[node name="play" type="TextureButton" parent="." unique_id=676534836]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
-offset_left = 803.0
-offset_top = 318.0
-offset_right = 1103.0
-offset_bottom = 468.0
+offset_left = 838.0
+offset_top = 319.0
+offset_right = 1138.0
+offset_bottom = 469.0
 size_flags_horizontal = 4
-texture_normal = ExtResource("7_ycqwp")
+texture_normal = ExtResource("5_0u7e5")
 texture_pressed = SubResource("CompressedTexture2D_0u7e5")
-texture_hover = ExtResource("6_kj0dl")
+texture_hover = ExtResource("6_pjlxb")
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=1640929549]
+[node name="setting" type="TextureButton" parent="." unique_id=1640929549]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 0
-offset_left = 799.0
-offset_top = 477.0
-offset_right = 1093.0
-offset_bottom = 633.0
+offset_left = 835.0
+offset_top = 433.0
+offset_right = 1075.0
+offset_bottom = 550.0
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_rig5r")
-texture_pressed = ExtResource("6_0u7e5")
-texture_hover = ExtResource("6_0u7e5")
+texture_normal = ExtResource("7_ycqwp")
+texture_pressed = ExtResource("7_0u7e5")
+texture_hover = ExtResource("7_0u7e5")
 ignore_texture_size = true
 
-[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1229014585]
+stream = ExtResource("9_rph6x")
+autoplay = true
+
+[connection signal="pressed" from="credit" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_texture_button_pressed"]
