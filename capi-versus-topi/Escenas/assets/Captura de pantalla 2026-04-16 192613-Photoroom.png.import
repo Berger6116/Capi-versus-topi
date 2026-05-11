@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7dmxhqw28ll"
-path="res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"
+uid="uid://caqhp0g5fnygg"
+path="res://.godot/imported/Captura de pantalla 2026-04-16 192613-Photoroom.png-7e2fdf51a486009ea2e3047d3fc49cb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/capiseguircaminando.jpeg"
-dest_files=["res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"]
+source_file="res://Escenas/assets/Captura de pantalla 2026-04-16 192613-Photoroom.png"
+dest_files=["res://.godot/imported/Captura de pantalla 2026-04-16 192613-Photoroom.png-7e2fdf51a486009ea2e3047d3fc49cb6.ctex"]
 
 [params]
 

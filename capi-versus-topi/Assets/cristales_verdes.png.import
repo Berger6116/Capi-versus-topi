@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7dmxhqw28ll"
-path="res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"
+uid="uid://drgoq5njcpxd3"
+path="res://.godot/imported/cristales_verdes.png-d7d8c088728b815e2897b4272eb007a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/capiseguircaminando.jpeg"
-dest_files=["res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"]
+source_file="res://Assets/cristales_verdes.png"
+dest_files=["res://.godot/imported/cristales_verdes.png-d7d8c088728b815e2897b4272eb007a6.ctex"]
 
 [params]
 

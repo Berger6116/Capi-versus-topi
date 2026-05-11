@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7dmxhqw28ll"
-path="res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"
+uid="uid://csk21oqfrnejn"
+path="res://.godot/imported/disparobase.JPG-b2883ef6ab3cf1552ae91013c234724d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/capiseguircaminando.jpeg"
-dest_files=["res://.godot/imported/capiseguircaminando.jpeg-1cafbfe494e390d9b205aa0479954003.ctex"]
+source_file="res://Assets/disparobase.JPG"
+dest_files=["res://.godot/imported/disparobase.JPG-b2883ef6ab3cf1552ae91013c234724d.ctex"]
 
 [params]
 
