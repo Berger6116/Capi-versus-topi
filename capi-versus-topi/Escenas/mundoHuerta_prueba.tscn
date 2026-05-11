@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://duenmj8ivln36"]
+
+[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_1tbuh"]
+[ext_resource type="PackedScene" uid="uid://csmiu54y2uyng" path="res://Escenas/parcela_tierra.tscn" id="3_lt0pu"]
+[ext_resource type="Script" uid="uid://c3x61rlevibot" path="res://Escenas/botones_huerta.gd" id="4_ws310"]
+
+[ext_resource type="Texture2D" uid="uid://dtij4y2jfl1y0" path="res://Assets/botonRegadera.png" id="5_467ac"]
+[ext_resource type="Texture2D" uid="uid://cdewfpqbchsxn" path="res://Assets/botonCanasta.png" id="6_gimqf"]
+[ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="7_467ac"]
+[ext_resource type="Script" uid="uid://e4alhvcp1qsc" path="res://Escenas/puntaje_prov.gd" id="7_gimqf"]
+[ext_resource type="Texture2D" uid="uid://blph63rq02j68" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
+[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
+[ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="11_3ssh1"]
+
+
+[node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=627682134]
+visible = false
+position = Vector2(1763, 540)
+texture = ExtResource("1_1tbuh")
+metadata/_edit_lock_ = true
+
+[node name="parcelaTierra6" parent="." unique_id=1817082500 instance=ExtResource("3_lt0pu")]
+position = Vector2(912, 696)
+
+[node name="parcelaTierra3" parent="." unique_id=1681226325 instance=ExtResource("3_lt0pu")]
+position = Vector2(786, 695)
+
+[node name="parcelaTierra5" parent="." unique_id=1816717725 instance=ExtResource("3_lt0pu")]
+position = Vector2(855, 735)
+
+[node name="parcelaTierra2" parent="." unique_id=1798375435 instance=ExtResource("3_lt0pu")]
+position = Vector2(729, 734)
+
+[node name="parcelaTierra4" parent="." unique_id=1213065538 instance=ExtResource("3_lt0pu")]
+position = Vector2(798, 776)
+
+[node name="parcelaTierra" parent="." unique_id=1531952277 instance=ExtResource("3_lt0pu")]
+position = Vector2(672, 775)
+
+[node name="BotonesHuerta" type="CanvasLayer" parent="." unique_id=177640428]
+script = ExtResource("4_ws310")
+
+[node name="ContenedorFade" type="Control" parent="BotonesHuerta" unique_id=1967574812]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotonSemillas" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=504865737]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 40.0
+offset_right = 927.0
+offset_bottom = 305.0
+texture_normal = ExtResource("5_h2qel")
+
+[node name="BotonRegadera" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=770475113]
+layout_mode = 0
+offset_left = 931.99994
+offset_top = 40.0
+offset_right = 1452.0
+offset_bottom = 411.0
+scale = Vector2(0.71999997, 0.72000027)
+texture_normal = ExtResource("5_ws310")
+
+[node name="BotonCanasta" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=296826588]
+layout_mode = 0
+offset_left = 1171.0
+offset_top = 40.0
+offset_right = 1510.0
+offset_bottom = 378.0
+scale = Vector2(0.6000049, 0.6000049)
+texture_normal = ExtResource("6_gimqf")
+
+[node name="Puntaje_prov" type="CanvasLayer" parent="." unique_id=932468122]
+script = ExtResource("7_gimqf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Puntaje_prov" unique_id=1427725466]
+position = Vector2(225, 150)
+texture = ExtResource("7_467ac")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Puntaje_prov" unique_id=641792854]
+position = Vector2(1772, 144)
+texture = ExtResource("9_76q2b")
+
+[node name="monedas" type="Label" parent="Puntaje_prov" unique_id=502212195]
+offset_left = 249.0
+offset_top = 103.0
+offset_right = 338.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("10_3ssh1")
+theme_override_font_sizes/font_size = 34
+text = "0000"
+label_settings = ExtResource("11_3ssh1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="oleadaTopos" type="Label" parent="Puntaje_prov" unique_id=904037729]
+offset_left = 1748.0
+offset_top = 97.0
+offset_right = 1788.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("10_3ssh1")
+theme_override_font_sizes/font_size = 34
+text = "10/10"
+label_settings = ExtResource("11_3ssh1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonSemillas" to="BotonesHuerta" method="_on_boton_semillas_button_down"]
+[connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonRegadera" to="BotonesHuerta" method="_on_boton_regadera_button_down"]
+[connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonCanasta" to="BotonesHuerta" method="_on_boton_canasta_button_down"]

@@ -39,7 +39,7 @@ func restar_vida():
 func sumar_puntaje_topos():
 	topos_derrotados += 1
 	actualizar_topos.emit(topos_derrotados)
-	print("topos derrotados: ", topos_derrotados)
+	#print("topos derrotados: ", topos_derrotados)
 	
 func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
