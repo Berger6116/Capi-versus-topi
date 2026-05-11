@@ -1,58 +1,47 @@
 extends CharacterBody2D
-#RECORDAR: ESTAN MUY GRANDES LOS SPRITES, 
-#SI LOS ACHICAMOS VOLVER A ESCALAR AL TOPI DESDE EL CHARACTERBODY
-#AHORA ESTA EN 0.4 SCALE
-class_name Topi
 
-var vida: int = 30
-var estar_enojado: bool= false
-var velocidad_actual:float = -80.0
+class_name Topi 
 
+#variables
+var escena_disparo_topi = preload("res://Escenas/disparo_topi.tscn")
+var vida: int= 30
+var velocidad_actual: float = -80.0
+var estar_enojado: bool = false
+
+#Funciones
 func _physics_process(delta: float) -> void:
-<<<<<<< Updated upstream
-	velocity.x= velocidad_actual
+	velocity.x = velocidad_actual
 	move_and_slide()
 	
-func recibir_danio (cantidad: int):
-	vida-=cantidad
-	print("Vida de topi:", vida)
-	
-	if vida<= 10 and not estar_enojado:
-		ponerse_rojo()
-
-	if vida <=0 :
-		morir()
-		
-func ponerse_rojo():
-	estar_enojado = true
-	velocidad_actual= -100.0
-	
-	var tween=create_tween()#efecto visual, cambia a rojo
-	tween.tween_property($Sprite2D, "modulate", Color (1,0,0),0.5)
-	print("Topi se enojó y ahora corre más rápido") 
-
-=======
-	velocity = Vector2(-80, 0)
-	velocity.x= velocidad_actual
-	move_and_slide()
 	if vida <= 10 and not estar_enojado:
 		ponerse_rojo()
-
-func ponerse_rojo():
+		
+#Acá llama a TimerAtaque
+func _on_timer_ataque_timeout() -> void:
+	disparar()
+	
+func disparar() -> void:
+	var bala = escena_disparo_topi.instantiate()
+	bala.global_position = global_position
+	get_tree().current_scene.add_child(bala)
+	
+func recibir_danio(dmg: int) -> void:
+	vida-= dmg
+	print("Topi recibió daño. Vida restante; ", vida)
+	
+func ponerse_rojo() -> void:
 	estar_enojado = true
-	velocidad_actual= -150.0
+	velocidad_actual = -150.0
 	
-	var tween=create_tween()#efecto visual, cambia a rojo
-	tween.tween_property($Sprite2D, "modulate", Color (1,0,0),0.5)
-	print("Topi se enojó y ahora corre más rápido") 
+	var tween = create_tween() #NUEVO TWEEN QUE AL FIN FUNCIONAAAA!!!
+	tween.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
+	print("Al fin se calentó este pecho fríooo")
 	
-func recibir_danio (dmg:int) -> void:
-		vida-= dmg
-		print ("vida del topi actualizada:", vida)
->>>>>>> Stashed changes
-
 func morir() -> void:
-	print("Topi derrotado!")
-	#AVISA AL GAME MANAGER SUMAR PUNTAJE
+	print ("Topi derrotado")
+	
 	GameManager.sumar_puntaje_topos()
+	queue_free()
+	
+func eliminar_todos_los_topos() -> void:
 	queue_free()

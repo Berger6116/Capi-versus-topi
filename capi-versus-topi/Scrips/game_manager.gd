@@ -4,14 +4,29 @@ extends Node
 var vidas_capi: int = 3
 var topos_derrotados: int = 0
 var monedas: int = 0
+var plantas_destruidas: int = 0
+var limite_de_plantas_para_perder : int= 10 #Si topi rompe 10 plantas Capi pierde
 
 #SEÑALES
 signal actualizar_vidas(cantidad: int)
-signal actualizar_topos(cantidad: int)
+signal actualizar_topos(cantidad: int) 
 signal actualizar_monedas(cantidad: int)
 signal game_over
 
-#FUNCIONES
+#Aca vienen las funciones
+func registrar_planta_destruida() -> void:
+	plantas_destruidas += 1
+	
+	if plantas_destruidas >= limite_de_plantas_para_perder:
+		activar_game_over()
+		
+func activar_game_over() -> void:
+	plantas_destruidas= 0
+	game_over.emit()
+	get_tree().change_scene_to_file("")
+	
+
+
 func restar_vida():
 	vidas_capi -= 1
 	actualizar_vidas.emit(vidas_capi)
@@ -30,9 +45,3 @@ func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
 	print("Monedas Actuales: ", monedas)
-
-func activar_game_over():
-	game_over.emit()
-	print("oh no, los topos derrotaron a Capi")
-	
-			
