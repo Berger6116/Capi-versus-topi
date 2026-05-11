@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
 [ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_l8lnw"]
 [ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
+[ext_resource type="AudioStream" uid="uid://bvdtvxmgt1ds5" path="res://musica_sfx/nivel_1.mp3" id="7_l8lnw"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="7_l8lnw"]
 
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
@@ -46,6 +47,10 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("6_l8lnw")
 theme_override_font_sizes/font_size = 54
 text = "Nivel 1 completado!!!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=643863091]
+stream = ExtResource("7_l8lnw")
+autoplay = true
 label_settings = ExtResource("7_l8lnw")
 horizontal_alignment = 1
 autowrap_mode = 2
