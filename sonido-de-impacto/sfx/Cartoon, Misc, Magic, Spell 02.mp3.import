@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dma8vn7sv7v04"
+path="res://.godot/imported/Cartoon, Misc, Magic, Spell 02.mp3-94dedbafd6744879c15f8478497d8473.mp3str"
+
+[deps]
+
+source_file="res://sfx/Cartoon, Misc, Magic, Spell 02.mp3"
+dest_files=["res://.godot/imported/Cartoon, Misc, Magic, Spell 02.mp3-94dedbafd6744879c15f8478497d8473.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,5 @@
 extends Marker2D
 
-#Señal para eliminar todos los topos al ganar el nivel:
-signal  eliminar_topos_restantes
 #CREAMOS LA FABRICA DE ENEMIGOS
 var fabrica = FactoryEnemigos.new()
 #NIVEL DE DIFICULTAD
@@ -14,7 +12,7 @@ func _ready() -> void:
 func _on_timer_timeout() -> void:
 	generar_topo()
 	#GENERAR ALEATORIEDAD PARA EL TIMER
-	var nuevo_tiempo = randf_range(4.0, 6.0)
+	var nuevo_tiempo = randf_range(5.0, 8.0)
 	#ASIGNAR EL NUEVO TIEMPO AL RELOJ:
 	$TimerOleada.wait_time = nuevo_tiempo
 	
@@ -26,9 +24,6 @@ func generar_topo() -> void:
 	if nuevo_enemigo != null:
 		#LO COLOCAMOS DONDE ESTÁ EL MARKER2D
 		nuevo_enemigo.global_position = global_position
-		
-		#Conecta la señal para eliminar topos:
-		eliminar_topos_restantes.connect(nuevo_enemigo.eliminar_todos_los_topos)
 		
 		#LO AGREGAMOS COMO HIJO DEL NIVEL 1
 		get_parent().add_child(nuevo_enemigo)

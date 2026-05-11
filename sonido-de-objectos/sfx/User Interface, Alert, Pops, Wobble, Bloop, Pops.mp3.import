@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bex185lmp0kta"
+path="res://.godot/imported/User Interface, Alert, Pops, Wobble, Bloop, Pops.mp3-b893f492047b2343f970d60429db8b2b.mp3str"
+
+[deps]
+
+source_file="res://sfx/User Interface, Alert, Pops, Wobble, Bloop, Pops.mp3"
+dest_files=["res://.godot/imported/User Interface, Alert, Pops, Wobble, Bloop, Pops.mp3-b893f492047b2343f970d60429db8b2b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

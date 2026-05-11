@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://r4ld66xqojq8"]
 
 [ext_resource type="Script" uid="uid://c0gdbs2oy5icm" path="res://Escenas/herramienta_semillas.gd" id="1_n68nk"]
-[ext_resource type="Texture2D" uid="uid://1al6ljf64fk0" path="res://Assets/bolsa.png" id="2_n68nk"]
+[ext_resource type="Texture2D" uid="uid://ctkca6ed1b4j0" path="res://Assets/semillas.PNG" id="2_ugsyh"]
 [ext_resource type="PackedScene" uid="uid://cigksl8ii6dv3" path="res://Escenas/d&d_component.tscn" id="3_8vguc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a2wy"]
@@ -11,9 +11,9 @@ size = Vector2(13.098767, 18.870049)
 script = ExtResource("1_n68nk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=696995917]
-position = Vector2(0.99999905, -5.0000005)
+position = Vector2(-10, -6)
 scale = Vector2(0.44000036, 0.44000036)
-texture = ExtResource("2_n68nk")
+texture = ExtResource("2_ugsyh")
 
 [node name="D&dcomponent" parent="." unique_id=403408535 node_paths=PackedStringArray("sprite") instance=ExtResource("3_8vguc")]
 sprite = NodePath("../Sprite2D")
