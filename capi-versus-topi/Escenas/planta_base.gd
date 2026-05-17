@@ -17,6 +17,9 @@ var fase_actual: FasePlanta = FasePlanta.BROTE
 @onready var sprite_creciendo: Sprite2D = $SpriteCreciendo
 @onready var sprite_cosechable: Sprite2D = $SpriteCosechable
 
+#Gestor de HP para actualizar vida:
+@onready var gestor_hp = $GestorDeHp
+
 
 func _ready() -> void:
 	actualizar_dibujo()
@@ -45,11 +48,13 @@ func regar() -> void:
 		actualizar_dibujo()
 		GameManager.sumar_monedas_huerta(10)
 		aparecer_moneda()
+		gestor_hp.actual_hp+=10
 	elif fase_actual == FasePlanta.CRECIENDO:
 		fase_actual = FasePlanta.COSECHABLE
 		GameManager.sumar_monedas_huerta(20)
 		actualizar_dibujo()
 		aparecer_moneda()
+		gestor_hp.actual_hp+=20
 
 func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
