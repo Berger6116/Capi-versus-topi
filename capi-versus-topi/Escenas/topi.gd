@@ -7,8 +7,14 @@ var escena_disparo_topi = preload("res://Escenas/disparo_topi.tscn")
 var vida: int= 30
 var velocidad_actual: float = -80.0
 var estar_enojado: bool = false
+var carriles_y: Array[float] = [695.0,735.0,775.0] #Acá cambian de carril,  Posición de las parcelas
+var ajuste_visual_y: float = -30.0
 
 #Funciones
+func _ready() -> void: #Con esto nuevo bajan tomando en cuenta las parcelas y se acomodan visualmente
+	global_position.y = carriles_y.pick_random() + ajuste_visual_y 
+
+
 func _physics_process(delta: float) -> void:
 	velocity.x = velocidad_actual
 	move_and_slide()
