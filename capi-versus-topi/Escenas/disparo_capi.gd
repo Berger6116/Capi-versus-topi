@@ -7,7 +7,7 @@ func _ready() -> void:
 	super._ready()
 	
 	#PERSONALIZAMOS LOS VALORES DEL DISPARO:
-	velocidad = 350.0
+	velocidad = 450.0
 	danio = 10
 	
 
