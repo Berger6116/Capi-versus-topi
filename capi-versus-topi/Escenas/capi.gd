@@ -8,8 +8,21 @@ var disparo_capi = preload("res://Escenas/disparo_capi.tscn")
 
 var topos_en_area_vision: int = 0
 
+#agregado_variable para disparo manual
+var puede_disparar_manual: bool = true
+
 func _ready() -> void:
 	pass
+
+#agrgado_manual con barra espaciadora
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("disparar") and puede_disparar:
+		puede_disparar = false
+		disparar()
+		# Esperar 0.5 segundos antes de poder disparar otra vez
+		await get_tree().create_timer(0.5).timeout
+		puede_disparar = true
+
 
 #FUNCION QUE SE ACTIVA CUANDO ALGO ENTRA EL EL AREA DE VISION DEL CAPI:
 func _on_area_vision_body_entered(body: Node2D) -> void:
