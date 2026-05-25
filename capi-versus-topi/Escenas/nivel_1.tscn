@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://dfe5y54evcp8f"]
 
 [ext_resource type="Script" uid="uid://dkoh31j10h606" path="res://Escenas/nivel_1.gd" id="1_gj223"]
-[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="2_hid1b"]
+[ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_hid1b"]
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_os1ql"]
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_l8lnw"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_l8lnw"]
 [ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="7_l8lnw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8lnw"]
+
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
+topos_a_derrotar = 10
+tiempo_huerta = 20.0
+siguiente_escena = "uid://ck8s6rl8v8bjd"
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=1144822905]
 position = Vector2(1763, 540)
@@ -49,3 +54,13 @@ text = "Nivel 1 completado!!!"
 label_settings = ExtResource("7_l8lnw")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=132126598]
+position = Vector2(-47, 39)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=736831751]
+position = Vector2(969, 794)
+scale = Vector2(99.48, 2.12)
+shape = SubResource("RectangleShape2D_l8lnw")
+debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
