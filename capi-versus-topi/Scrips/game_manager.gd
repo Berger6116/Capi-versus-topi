@@ -45,3 +45,8 @@ func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
 	print("Monedas Actuales: ", monedas)
+
+func resetear_para_nuevo_nivel():
+	topos_derrotados = 0
+	plantas_destruidas = 0
+	print("variables topos y plantas derrotados a CERO")

@@ -6,6 +6,8 @@ extends Node2D
 @onready var mensajes: Label = $Mensajes/Mensajes_nivel
 #Acá despues si va mas ordenado en un HUD se cambia esto:
 @onready var botones_huerta = $MundoHuertaPrueba/BotonesHuerta/ContenedorFade
+#Pantalla victoria:
+var pantalla_victoria = preload("res://nivel_1_completado.tscn")
 
 func _ready() -> void:
 		
@@ -77,6 +79,11 @@ func chequear_victoria (topos_muertos: int) -> void:
 			timer.stop()
 		#señal para eliminar topos restantes:
 		spawner_topos.eliminar_topos_restantes.emit()
+		#Ocultar botones de huerta:
+		fade_out(botones_huerta, 0.5)
 		#mostrar cartel de victoria:
-		mensajes.text = "Nivel 1 completado!!!"
-		mensajes.show()
+		#mensajes.text = "Nivel 1 completado!!!"
+		#mensajes.show()
+		#SALTAR A PANTALLA DE VICTORIA:
+		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
+		
