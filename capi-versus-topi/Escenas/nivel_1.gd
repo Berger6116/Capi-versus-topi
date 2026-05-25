@@ -3,7 +3,7 @@ extends Node2D
 #NIVEL 1
 @export var topos_a_derrotar:int = 10
 @export var tiempo_huerta: float = 20.0
-
+@export_file("*.tscn") var siguiente_escena: String
 
 @onready var camara: Camera2D = $Camera2D
 @onready var spawner_topos: Marker2D = $SpawnerTopos
@@ -88,5 +88,5 @@ func chequear_victoria (topos_muertos: int) -> void:
 		#mensajes.text = "Nivel 1 completado!!!"
 		#mensajes.show()
 		#SALTAR A PANTALLA DE VICTORIA:
-		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
+		get_tree().change_scene_to_file(siguiente_escena)
 		

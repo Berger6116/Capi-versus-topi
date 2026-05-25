@@ -10,6 +10,7 @@
 
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
+siguiente_escena = "uid://d3yxiq7vixdfe"
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=1144822905]
 position = Vector2(1763, 540)
