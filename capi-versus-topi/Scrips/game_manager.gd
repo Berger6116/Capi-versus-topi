@@ -59,6 +59,7 @@ func sumar_monedas_huerta(cantidad: int):
 func resetear_para_nuevo_nivel():
 	topos_derrotados = 0
 	plantas_destruidas = 0
+	topos_muertos_por_nivel = 0
 	print("variables topos y plantas derrotados a CERO")
 	
 func tienda_comprar(item: String, precio: int) -> bool:
