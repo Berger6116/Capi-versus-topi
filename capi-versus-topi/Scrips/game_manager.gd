@@ -6,6 +6,8 @@ var topos_derrotados: int = 0
 var monedas: int = 0
 var plantas_destruidas: int = 0
 var limite_de_plantas_para_perder : int= 10 #Si topi rompe 10 plantas Capi pierde
+var ruta_siguiente_nivel: String = ""
+var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
 
 #Diccionario de mejoras para comprar con monedas:
 var mejoras_desbloqueadas: Dictionary ={

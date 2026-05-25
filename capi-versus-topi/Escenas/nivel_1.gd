@@ -1,8 +1,8 @@
 extends Node2D
 
-#NIVEL 1
-@export var topos_a_derrotar:int = 10
-@export var tiempo_huerta: float = 20.0
+#NIVELES GENERAL
+@export var topos_a_derrotar:int 
+@export var tiempo_huerta: float
 @export_file("*.tscn") var siguiente_escena: String
 
 @onready var camara: Camera2D = $Camera2D
@@ -10,11 +10,16 @@ extends Node2D
 @onready var mensajes: Label = $Mensajes/Mensajes_nivel
 #Acá despues si va mas ordenado en un HUD se cambia esto:
 @onready var botones_huerta = $MundoHuertaPrueba/BotonesHuerta/ContenedorFade
-
+var mejora_canion_techo = preload("res://Escenas/canion_techo.tscn")
 
 func _ready() -> void:
-		
+	GameManager.topos_muertos_por_nivel = topos_a_derrotar	
 	GameManager.actualizar_topos.connect(chequear_victoria)
+	
+	#PARA PROBAR CAÑON:
+	#GameManager.mejoras_desbloqueadas["canion_techo"] = true
+	#Funcion para Instanciar Mejoras de la tienda
+	instanciar_mejoras()
 	
 	#Fases del nivel 1: Huerta y luego oleada de topos
 	await fase_huerta(tiempo_huerta)
@@ -71,6 +76,12 @@ func fade_in(nodo: Node, tiempo: float) ->void:
 	var fadeIn = create_tween()
 	fadeIn.tween_property(nodo, "modulate:a", 1.0, tiempo).set_trans(Tween.TRANS_SINE)
 	
+# por ahora tenemos la mejora del canion en el techo nada mas, aca se instancia:	
+func instanciar_mejoras() -> void:
+	if GameManager.mejoras_desbloqueadas["canion_techo"] == true:
+		var nuevo_canion = mejora_canion_techo.instantiate()
+		#nuevo_canion.global_position = global_position
+		add_child(nuevo_canion)
 	
 
 func chequear_victoria (topos_muertos: int) -> void:
@@ -87,6 +98,8 @@ func chequear_victoria (topos_muertos: int) -> void:
 		#mostrar cartel de victoria:
 		#mensajes.text = "Nivel 1 completado!!!"
 		#mensajes.show()
+		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
+		GameManager.ruta_siguiente_nivel = siguiente_escena
 		#SALTAR A PANTALLA DE VICTORIA:
-		get_tree().change_scene_to_file(siguiente_escena)
+		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
 		
