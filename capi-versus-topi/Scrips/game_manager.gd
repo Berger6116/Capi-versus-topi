@@ -7,6 +7,14 @@ var monedas: int = 0
 var plantas_destruidas: int = 0
 var limite_de_plantas_para_perder : int= 10 #Si topi rompe 10 plantas Capi pierde
 
+#Diccionario de mejoras para comprar con monedas:
+var mejoras_desbloqueadas: Dictionary ={
+	"canion_techo": false,
+	"semillas_poderosas": false, # inventar planta nueva
+	"arma_mejorada": false # inventar arma nueva
+}
+
+
 #SEÑALES
 signal actualizar_vidas(cantidad: int)
 signal actualizar_topos(cantidad: int) 
@@ -50,3 +58,15 @@ func resetear_para_nuevo_nivel():
 	topos_derrotados = 0
 	plantas_destruidas = 0
 	print("variables topos y plantas derrotados a CERO")
+	
+func tienda_comprar(item: String, precio: int) -> bool:
+	if monedas >= precio and mejoras_desbloqueadas[item] == false:
+		monedas -= precio
+		mejoras_desbloqueadas[item] = true
+		actualizar_monedas.emit(monedas)
+		print("Compra exitosa! Descloqueaste: ", item)
+		return true
+	else:
+		print("No tenes suficientes monedas o ya lo tenes")
+		return false
+		
