@@ -1,20 +1,23 @@
 extends Node2D
 
 #NIVEL 1
+@export var topos_a_derrotar:int = 10
+@export var tiempo_huerta: float = 20.0
+
+
 @onready var camara: Camera2D = $Camera2D
 @onready var spawner_topos: Marker2D = $SpawnerTopos
 @onready var mensajes: Label = $Mensajes/Mensajes_nivel
 #Acá despues si va mas ordenado en un HUD se cambia esto:
 @onready var botones_huerta = $MundoHuertaPrueba/BotonesHuerta/ContenedorFade
-#Pantalla victoria:
-var pantalla_victoria = preload("res://nivel_1_completado.tscn")
+
 
 func _ready() -> void:
 		
 	GameManager.actualizar_topos.connect(chequear_victoria)
 	
 	#Fases del nivel 1: Huerta y luego oleada de topos
-	await fase_huerta(20.0)
+	await fase_huerta(tiempo_huerta)
 	await fase_oleada(5.0)
 	
 	#funcion movimiento de camara para iniciar oleada de topos
@@ -47,7 +50,7 @@ func mostrar_mensaje(msj: String) -> void:
 	mensajes.hide()
 
 func fase_huerta (tiempo: float) -> void:
-	mostrar_mensaje("Tienes 15 segundos para plantar!!!")
+	mostrar_mensaje("Tienes " + str(int(tiempo_huerta)) + " segundos para plantar!!!")
 	await get_tree().create_timer(tiempo).timeout
 
 func fase_oleada (tiempo: float) -> void:
@@ -72,7 +75,7 @@ func fade_in(nodo: Node, tiempo: float) ->void:
 
 func chequear_victoria (topos_muertos: int) -> void:
 	
-	if topos_muertos >= 10:
+	if topos_muertos >= topos_a_derrotar:
 		#print("Lograste la victoria! mataste 10 topos!")
 		var timer = spawner_topos.get_node("TimerOleada")
 		if timer != null:
