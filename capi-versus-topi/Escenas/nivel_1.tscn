@@ -8,8 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="7_l8lnw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8lnw"]
+
 [node name="Nivel1" type="Node2D" unique_id=2084416755]
 script = ExtResource("1_gj223")
+topos_a_derrotar = 10
+tiempo_huerta = 20.0
+siguiente_escena = "uid://ck8s6rl8v8bjd"
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=1144822905]
 position = Vector2(1763, 540)

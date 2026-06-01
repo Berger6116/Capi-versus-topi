@@ -5,5 +5,17 @@
 .tmp/
 *.tmp
 
-# Ignore all .import files (Godot will regenerate them)
+# Godot-specific ignores
+.import/
 *.import
+export.cfg
+export_credentials.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+*.tmp

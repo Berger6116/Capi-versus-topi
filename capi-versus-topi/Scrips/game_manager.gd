@@ -47,3 +47,20 @@ func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
 	print("Monedas Actuales: ", monedas)
+
+func resetear_para_nuevo_nivel():
+	topos_derrotados = 0
+	plantas_destruidas = 0
+	print("variables topos y plantas derrotados a CERO")
+	
+func tienda_comprar(item: String, precio: int) -> bool:
+	if monedas >= precio and mejoras_desbloqueadas[item] == false:
+		monedas -= precio
+		mejoras_desbloqueadas[item] = true
+		actualizar_monedas.emit(monedas)
+		print("Compra exitosa! Descloqueaste: ", item)
+		return true
+	else:
+		print("No tenes suficientes monedas o ya lo tenes")
+		return false
+		
