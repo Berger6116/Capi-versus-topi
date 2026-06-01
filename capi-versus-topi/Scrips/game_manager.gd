@@ -6,22 +6,14 @@ var topos_derrotados: int = 0
 var monedas: int = 0
 var plantas_destruidas: int = 0
 var limite_de_plantas_para_perder : int= 10 #Si topi rompe 10 plantas Capi pierde
-var ruta_siguiente_nivel: String = ""
-var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
-
-#Diccionario de mejoras para comprar con monedas:
-var mejoras_desbloqueadas: Dictionary ={
-	"canion_techo": false,
-	"semillas_poderosas": false, # inventar planta nueva
-	"arma_mejorada": false # inventar arma nueva
-}
-
+var tomates_cosechados: int = 0
 
 #SEÑALES
 signal actualizar_vidas(cantidad: int)
 signal actualizar_topos(cantidad: int) 
 signal actualizar_monedas(cantidad: int)
 signal game_over
+
 
 #Aca vienen las funciones
 func registrar_planta_destruida() -> void:

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b3xlrkyif0525"]
+
+[ext_resource type="Script" path="res://Escenas/escudo.gd" id="1_qlvce"]
+[ext_resource type="Texture2D" path="res://Escenas/assets/vallanueva.png" id="2_k2nii"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xatqd"]
+radius = 48.0
+height = 132.0
+
+[node name="Escudo" type="Area2D" unique_id=36460256 groups=["plantas"]]
+script = ExtResource("1_qlvce")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=984168838]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k2nii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981617487]
+position = Vector2(-4, -2)
+shape = SubResource("CapsuleShape2D_xatqd")

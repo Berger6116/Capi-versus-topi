@@ -83,7 +83,7 @@ func instanciar_mejoras() -> void:
 		#nuevo_canion.global_position = global_position
 		add_child(nuevo_canion)
 	
-
+const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
 func chequear_victoria (topos_muertos: int) -> void:
 	
 	if topos_muertos >= topos_a_derrotar:
@@ -93,13 +93,5 @@ func chequear_victoria (topos_muertos: int) -> void:
 			timer.stop()
 		#señal para eliminar topos restantes:
 		spawner_topos.eliminar_topos_restantes.emit()
-		#Ocultar botones de huerta:
-		fade_out(botones_huerta, 0.5)
-		#mostrar cartel de victoria:
-		#mensajes.text = "Nivel 1 completado!!!"
-		#mensajes.show()
-		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
-		GameManager.ruta_siguiente_nivel = siguiente_escena
-		#SALTAR A PANTALLA DE VICTORIA:
-		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
-		
+		var pantalla_victoria = ESCENA_VICTORIA.instantiate()
+		$capavictoria.add_child(pantalla_victoria)
