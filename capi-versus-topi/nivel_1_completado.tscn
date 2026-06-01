@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://duvx2a4w4ij5b"]
+[gd_scene format=3 uid="uid://d3yxiq7vixdfe"]
 
-[ext_resource type="Script" path="res://nivel_1_completado.gd" id="1_4op40"]
-[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_cuh1q"]
-[ext_resource type="Texture2D" path="res://Assets/nivel_1_completado.png" id="1_v8h46"]
-[ext_resource type="Texture2D" path="res://botones/siguiente_nivel.png" id="2_cuh1q"]
-[ext_resource type="Texture2D" path="res://botones/volver_a_intentar.png" id="3_4op40"]
-[ext_resource type="Texture2D" path="res://botones/ir_al_mapa.png" id="4_1bkp7"]
+[ext_resource type="Script" uid="uid://cxhsty3228tnv" path="res://nivel_1_completado.gd" id="1_4op40"]
+[ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="1_cuh1q"]
+[ext_resource type="Texture2D" uid="uid://fej04tr66rg2" path="res://Assets/nivel_1_completado.png" id="1_v8h46"]
+[ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="2_cuh1q"]
+[ext_resource type="Texture2D" uid="uid://cfe283oe4j2ei" path="res://botones/volver_a_intentar.png" id="3_4op40"]
+[ext_resource type="Texture2D" uid="uid://d2l313lxt40vd" path="res://botones/ir_al_mapa.png" id="4_1bkp7"]
 
 [node name="nivel_1_completado" type="Control" unique_id=1061625479]
 layout_mode = 3

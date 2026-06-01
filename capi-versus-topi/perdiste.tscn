@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://h33oy07a5gwk"]
+
+[ext_resource type="Texture2D" uid="uid://dh5c8l4361krc" path="res://Assets/nivel_1_fallado.png" id="1_juf4p"]
+[ext_resource type="Texture2D" uid="uid://d2l313lxt40vd" path="res://botones/ir_al_mapa.png" id="3_6iysm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_greie"]
+load_path = "res://.godot/imported/volver_a_intentar.png-b1d725c0800019c60deea8c36716ccd8.ctex"
+
+[node name="perdiste" type="Control" unique_id=335972566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1098930694]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1075.0
+texture = ExtResource("1_juf4p")
+
+[node name="volver_a_intentar" type="TextureButton" parent="." unique_id=1035615317]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 657.0
+offset_right = 1653.0
+offset_bottom = 1009.0
+texture_normal = SubResource("CompressedTexture2D_greie")
+
+[node name="ir_a_mapa" type="TextureButton" parent="." unique_id=367717119]
+layout_mode = 0
+offset_left = 548.00006
+offset_top = 760.0
+offset_right = 854.00006
+offset_bottom = 879.0
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("3_6iysm")

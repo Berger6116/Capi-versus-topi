@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://duenmj8ivln36"]
 
-[ext_resource type="Texture2D" uid="uid://cjlse8qcaregw" path="res://Assets/BG_1.png" id="1_1tbuh"]
+[ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="1_1tbuh"]
 [ext_resource type="PackedScene" uid="uid://csmiu54y2uyng" path="res://Escenas/parcela_tierra.tscn" id="3_lt0pu"]
+[ext_resource type="Texture2D" uid="uid://sxncevr6d25t" path="res://Assets/botonSemillas.png" id="4_h2qel"]
 [ext_resource type="Script" uid="uid://c3x61rlevibot" path="res://Escenas/botones_huerta.gd" id="4_ws310"]
-
 [ext_resource type="Texture2D" uid="uid://dtij4y2jfl1y0" path="res://Assets/botonRegadera.png" id="5_467ac"]
 [ext_resource type="Texture2D" uid="uid://cdewfpqbchsxn" path="res://Assets/botonCanasta.png" id="6_gimqf"]
 [ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="7_467ac"]
 [ext_resource type="Script" uid="uid://e4alhvcp1qsc" path="res://Escenas/puntaje_prov.gd" id="7_gimqf"]
-[ext_resource type="Texture2D" uid="uid://blph63rq02j68" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
+[ext_resource type="Texture2D" uid="uid://db6ourjk8ufqs" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="11_3ssh1"]
-
+[ext_resource type="Texture2D" uid="uid://dl3mqse37vu4u" path="res://Assets/UI_barra_vida_base.png" id="12_qfr17"]
+[ext_resource type="Script" uid="uid://bqachtkgjfo84" path="res://Escenas/topos_derrotados.gd" id="13_3of7u"]
+[ext_resource type="Texture2D" uid="uid://ccneh7irro2js" path="res://Assets/UI_barra_vida_color.png" id="13_d2ylm"]
 
 [node name="MundoHuertaPrueba" type="Node2D" unique_id=757438057]
+metadata/_edit_horizontal_guides_ = [243.0, 40.0]
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=627682134]
 visible = false
@@ -54,18 +57,19 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 693.0
 offset_top = 40.0
-offset_right = 927.0
-offset_bottom = 305.0
-texture_normal = ExtResource("5_h2qel")
+offset_right = 1032.0
+offset_bottom = 378.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_h2qel")
 
 [node name="BotonRegadera" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=770475113]
 layout_mode = 0
 offset_left = 931.99994
 offset_top = 40.0
-offset_right = 1452.0
+offset_right = 1365.0
 offset_bottom = 411.0
-scale = Vector2(0.71999997, 0.72000027)
-texture_normal = ExtResource("5_ws310")
+scale = Vector2(0.5999975, 0.59999776)
+texture_normal = ExtResource("5_467ac")
 
 [node name="BotonCanasta" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=296826588]
 layout_mode = 0
@@ -76,33 +80,49 @@ offset_bottom = 378.0
 scale = Vector2(0.6000049, 0.6000049)
 texture_normal = ExtResource("6_gimqf")
 
-[node name="Puntaje_prov" type="CanvasLayer" parent="." unique_id=932468122]
+[node name="Monedas" type="CanvasLayer" parent="." unique_id=932468122]
 script = ExtResource("7_gimqf")
 
-[node name="Sprite2D" type="Sprite2D" parent="Puntaje_prov" unique_id=1427725466]
-position = Vector2(225, 150)
+[node name="Sprite2D" type="Sprite2D" parent="Monedas" unique_id=1427725466]
+position = Vector2(222, 980)
 texture = ExtResource("7_467ac")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Puntaje_prov" unique_id=641792854]
-position = Vector2(1772, 144)
-texture = ExtResource("9_76q2b")
-
-[node name="monedas" type="Label" parent="Puntaje_prov" unique_id=502212195]
-offset_left = 249.0
-offset_top = 103.0
-offset_right = 338.0
-offset_bottom = 150.0
+[node name="monedas" type="Label" parent="Monedas" unique_id=502212195]
+offset_left = 246.0
+offset_top = 933.0
+offset_right = 335.0
+offset_bottom = 980.0
 theme_override_fonts/font = ExtResource("10_3ssh1")
 theme_override_font_sizes/font_size = 34
 text = "0000"
 label_settings = ExtResource("11_3ssh1")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="oleadaTopos" type="Label" parent="Puntaje_prov" unique_id=904037729]
+[node name="Barra_vida_base" type="Sprite2D" parent="Monedas" unique_id=415411349]
+position = Vector2(249, 144)
+texture = ExtResource("12_qfr17")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Monedas/Barra_vida_base" unique_id=286895849]
+modulate = Color(0.34901962, 0.79607844, 0.39215687, 1)
+offset_left = -223.0
+offset_top = -93.0
+offset_right = 223.0
+offset_bottom = 93.0
+texture_over = ExtResource("13_d2ylm")
+
+[node name="Topos_derrotados" type="CanvasLayer" parent="." unique_id=1585621118]
+script = ExtResource("13_3of7u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Topos_derrotados" unique_id=641792854]
+position = Vector2(1772, 144)
+texture = ExtResource("9_76q2b")
+
+[node name="oleadaTopos" type="Label" parent="Topos_derrotados" unique_id=904037729]
 offset_left = 1748.0
 offset_top = 97.0
-offset_right = 1788.0
+offset_right = 1836.0
 offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("10_3ssh1")
 theme_override_font_sizes/font_size = 34

@@ -11,8 +11,8 @@ size = Vector2(22.731712, 33.1243)
 script = ExtResource("1_wdxet")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953126240]
-position = Vector2(9.999999, -11)
-scale = Vector2(0.24000034, 0.24000034)
+position = Vector2(1, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_a6y38")
 
 [node name="D&dcomponent" parent="." unique_id=403408535 node_paths=PackedStringArray("sprite") instance=ExtResource("3_ax3oc")]
