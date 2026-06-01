@@ -8,6 +8,13 @@ var plantas_destruidas: int = 0
 var limite_de_plantas_para_perder : int= 10 #Si topi rompe 10 plantas Capi pierde
 var tomates_cosechados: int = 0
 
+#Diccionario de mejoras para comprar con monedas:
+var mejoras_desbloqueadas: Dictionary ={
+	"canion_techo": false,
+	"semillas_poderosas": false, # inventar planta nueva
+	"arma_mejorada": false # inventar arma nueva
+}
+
 #SEÑALES
 signal actualizar_vidas(cantidad: int)
 signal actualizar_topos(cantidad: int) 
