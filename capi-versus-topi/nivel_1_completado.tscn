@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d3yxiq7vixdfe"]
 
+[ext_resource type="Script" uid="uid://cxhsty3228tnv" path="res://nivel_1_completado.gd" id="1_cuh1q"]
 [ext_resource type="Texture2D" uid="uid://fej04tr66rg2" path="res://Assets/nivel_1_completado.png" id="1_v8h46"]
 [ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="2_cuh1q"]
 [ext_resource type="Texture2D" uid="uid://cfe283oe4j2ei" path="res://botones/volver_a_intentar.png" id="3_4op40"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cuh1q")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=696489115]
 layout_mode = 0
@@ -44,3 +46,23 @@ offset_top = 757.0
 offset_right = 836.0
 offset_bottom = 876.0
 texture_normal = ExtResource("4_1bkp7")
+
+[node name="monedas" type="Label" parent="." unique_id=1053370738]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 695.0
+offset_right = 664.0
+offset_bottom = 718.0
+scale = Vector2(2.993141, 2.2181349)
+text = "0000"
+
+[node name="tomates" type="Label" parent="." unique_id=2131646163]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 690.00006
+offset_right = 997.0
+offset_bottom = 713.00006
+scale = Vector2(3.014954, 2.2400026)
+text = "0000"
+
+[connection signal="pressed" from="volve_a_intentar" to="." method="_on_volve_a_intentar_pressed"]

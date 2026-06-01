@@ -60,6 +60,7 @@ func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
 		print("planta cosechada")
 		GameManager.sumar_monedas_huerta(30)
+		GameManager.tomates_cosechados += 1
 		aparecer_moneda()
 		return true
 	else:

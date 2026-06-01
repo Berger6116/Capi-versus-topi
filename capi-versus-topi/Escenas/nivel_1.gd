@@ -67,7 +67,7 @@ func fade_in(nodo: Node, tiempo: float) ->void:
 	fadeIn.tween_property(nodo, "modulate:a", 1.0, tiempo).set_trans(Tween.TRANS_SINE)
 	
 	
-
+const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
 func chequear_victoria (topos_muertos: int) -> void:
 	
 	if topos_muertos >= 10:
@@ -77,6 +77,5 @@ func chequear_victoria (topos_muertos: int) -> void:
 			timer.stop()
 		#señal para eliminar topos restantes:
 		spawner_topos.eliminar_topos_restantes.emit()
-		#mostrar cartel de victoria:
-		mensajes.text = "Nivel 1 completado!!!"
-		mensajes.show()
+		var pantalla_victoria = ESCENA_VICTORIA.instantiate()
+		$capavictoria.add_child(pantalla_victoria)
