@@ -93,5 +93,7 @@ func chequear_victoria (topos_muertos: int) -> void:
 			timer.stop()
 		#señal para eliminar topos restantes:
 		spawner_topos.eliminar_topos_restantes.emit()
+		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
+		GameManager.ruta_siguiente_nivel = siguiente_escena
 		var pantalla_victoria = ESCENA_VICTORIA.instantiate()
 		$capavictoria.add_child(pantalla_victoria)

@@ -65,4 +65,5 @@ offset_bottom = 713.00006
 scale = Vector2(3.014954, 2.2400026)
 text = "0000"
 
+[connection signal="pressed" from="siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]
 [connection signal="pressed" from="volve_a_intentar" to="." method="_on_volve_a_intentar_pressed"]
