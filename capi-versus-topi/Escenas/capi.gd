@@ -16,12 +16,12 @@ func _ready() -> void:
 
 #agrgado_manual con barra espaciadora
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("disparar") and puede_disparar:
-		puede_disparar = false
+	if Input.is_action_just_pressed("disparar") and puede_disparar_manual:
+		puede_disparar_manual = false
 		disparar()
 		# Esperar 0.5 segundos antes de poder disparar otra vez
 		await get_tree().create_timer(0.5).timeout
-		puede_disparar = true
+		puede_disparar_manual = true
 
 
 #FUNCION QUE SE ACTIVA CUANDO ALGO ENTRA EL EL AREA DE VISION DEL CAPI:
