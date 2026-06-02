@@ -9,6 +9,12 @@ func _on_volve_a_intentar_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Escenas/nivel_1.tscn")
 
+
+func _on_siguiente_nivel_pressed() -> void:
+	GameManager.resetear_para_nuevo_nivel()
+	get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
+
+
 func _ready() -> void:
 	label_monedas_final.text = str(GameManager.monedas)
 	label_tomates_final.text = str(GameManager.tomates_cosechados)
