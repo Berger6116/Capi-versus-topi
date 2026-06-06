@@ -19,9 +19,11 @@ func _ready() -> void:
 	muerte.connect(get_parent().morir)
 	
 	#Verifica si entró un disparo
-func on_area_entered(area: Area2D) -> void:
-		recibir_danio(10) #Ahora llamamos a la función recibir_danio
-		area.queue_free() #Borramos la bala para que no atraviese al enemigo
+func _on_area_entered(area: Area2D) -> void:
+		if area.is_in_group("balas"):
+			recibir_danio(10) #Ahora llamamos a la función recibir_danio
+			area.queue_free() #Borramos la bala para que no atraviese al enemigo
+
 		
 func recibir_danio (dmg: int) -> void:
 		actual_hp -= dmg

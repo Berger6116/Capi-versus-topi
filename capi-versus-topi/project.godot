@@ -35,6 +35,10 @@ folder_colors={
 "res://credito/": "pink"
 }
 
+[global_group]
+
+balas=""
+
 [input]
 
 disparar={

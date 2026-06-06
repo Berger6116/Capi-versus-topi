@@ -17,7 +17,7 @@ func _ready() -> void:
 	GameManager.actualizar_topos.connect(chequear_victoria)
 	
 	#PARA PROBAR CAÑON:
-	#GameManager.mejoras_desbloqueadas["canion_techo"] = true
+	GameManager.mejoras_desbloqueadas["canion_techo"] = true
 	#Funcion para Instanciar Mejoras de la tienda
 	instanciar_mejoras()
 	

@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 
 #FUNCION QUE SE ACTIVA CUANDO ALGO ENTRA EL EL AREA DE VISION DEL CAPI:
 func _on_area_vision_body_entered(body: Node2D) -> void:
-	print(body.name, " entró en el area!!")
+	#print(body.name, " entró en el area!!")
 	if body is Topi:
-		print("Entra al if detecta al topi y enciende timer")
+		#print("Entra al if detecta al topi y enciende timer")
 		topos_en_area_vision += 1
 		if timer_disparo.is_stopped():
 			timer_disparo.start()
@@ -44,7 +44,8 @@ func _on_area_vision_body_exited(body: Node2D) -> void:
 
 
 func _on_timer_disparo_timeout() -> void:
-	disparar()
+	#disparar()
+	pass
 	
 func disparar() -> void:
 	print("Capi disparando...")
