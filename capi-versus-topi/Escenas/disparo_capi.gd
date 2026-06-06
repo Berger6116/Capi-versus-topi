@@ -16,4 +16,11 @@ func _physics_process(delta: float) -> void:
 	#El disparo del capi va hacia la derecha hasta que choca con el topi
 	global_position.x += velocidad * delta
 	
-	
+func _on_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Capi:
+		return
+		
+	if area is GestorDeHP:
+		area.recibir_danio(danio)
+		queue_free()
+		return

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xej1"]
 size = Vector2(36, 23)
 
-[node name="disparo_topi" type="Area2D" unique_id=1295119535]
+[node name="disparo_topi" type="Area2D" unique_id=1295119535 groups=["balas_topi"]]
 collision_layer = 8
 script = ExtResource("1_yuwfm")
 

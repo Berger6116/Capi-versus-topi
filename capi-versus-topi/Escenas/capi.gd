@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Capi
 
+var vida: int = 100
 var disparo_capi = preload("res://Escenas/disparo_capi.tscn")
 
 @onready var timer_disparo: Timer = $TimerDisparo
@@ -54,3 +55,7 @@ func disparar() -> void:
 		nuevo_disparo_capi.global_position = global_position
 		get_parent().add_child(nuevo_disparo_capi)
 		print("fin del disparo")
+
+func morir() -> void:
+	print("Capi murió... Game Over!!!")
+	queue_free()
