@@ -1,7 +1,6 @@
 extends Node
 
 #VARIABLES GLOBALES
-#var vidas_capi: int = 3
 var topos_derrotados: int = 0
 var monedas: int = 0
 var plantas_destruidas: int = 0
