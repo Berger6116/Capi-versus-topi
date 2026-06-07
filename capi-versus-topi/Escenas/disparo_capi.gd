@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	global_position.x += velocidad * delta
 	
 func _on_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Capi or PlantaBase:
+	if area.get_parent() is Capi or area.get_parent() is PlantaBase:
 		return
 		
 	if area is GestorDeHP:
