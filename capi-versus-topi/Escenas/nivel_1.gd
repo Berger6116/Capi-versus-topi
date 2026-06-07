@@ -13,7 +13,8 @@ extends Node2D
 var mejora_canion_techo = preload("res://Escenas/canion_techo.tscn")
 
 func _ready() -> void:
-	GameManager.topos_muertos_por_nivel = topos_a_derrotar	
+	GameManager.topos_muertos_por_nivel = topos_a_derrotar
+	GameManager.actualizar_topos.emit(GameManager.topos_derrotados)
 	GameManager.actualizar_topos.connect(chequear_victoria)
 	
 	#PARA PROBAR CAÑON:
