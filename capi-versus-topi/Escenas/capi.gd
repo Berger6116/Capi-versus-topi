@@ -13,6 +13,7 @@ var topos_en_area_vision: int = 0
 var puede_disparar_manual: bool = true
 
 func _ready() -> void:
+	$GestorDeHp.impacto_recibido.connect(_on_gestor_de_hp_impacto_recibido)
 	pass
 
 #agrgado_manual con barra espaciadora
@@ -55,7 +56,13 @@ func disparar() -> void:
 		nuevo_disparo_capi.global_position = global_position
 		get_parent().add_child(nuevo_disparo_capi)
 		print("fin del disparo")
+	
 
 func morir() -> void:
 	print("Capi murió... Game Over!!!")
+	GameManager.activar_game_over()
 	queue_free()
+
+
+func _on_gestor_de_hp_impacto_recibido(hp: int) -> void:
+	GameManager.actualizar_vida_capi.emit(hp)
