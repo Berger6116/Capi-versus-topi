@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuoc1qstm0d6l" path="res://perdiste.gd" id="1_d53tk"]
 [ext_resource type="Texture2D" uid="uid://dh5c8l4361krc" path="res://Assets/nivel_1_fallado.png" id="1_juf4p"]
+[ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_6iysm"]
 [ext_resource type="Texture2D" uid="uid://d2l313lxt40vd" path="res://botones/ir_al_mapa.png" id="3_6iysm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_greie"]
@@ -15,6 +16,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d53tk")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1480213301]
+position = Vector2(1763, 540)
+texture = ExtResource("2_6iysm")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1098930694]
 layout_mode = 0

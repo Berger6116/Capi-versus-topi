@@ -13,7 +13,8 @@ extends Node2D
 var mejora_canion_techo = preload("res://Escenas/canion_techo.tscn")
 
 func _ready() -> void:
-	GameManager.topos_muertos_por_nivel = topos_a_derrotar	
+	GameManager.topos_muertos_por_nivel = topos_a_derrotar
+	GameManager.actualizar_topos.emit(GameManager.topos_derrotados)
 	GameManager.actualizar_topos.connect(chequear_victoria)
 	
 	#PARA PROBAR CAÑON:
@@ -83,7 +84,7 @@ func instanciar_mejoras() -> void:
 		#nuevo_canion.global_position = global_position
 		add_child(nuevo_canion)
 	
-const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
+#const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
 func chequear_victoria (topos_muertos: int) -> void:
 	
 	if topos_muertos >= topos_a_derrotar:
@@ -95,5 +96,5 @@ func chequear_victoria (topos_muertos: int) -> void:
 		spawner_topos.eliminar_topos_restantes.emit()
 		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
 		GameManager.ruta_siguiente_nivel = siguiente_escena
-		var pantalla_victoria = ESCENA_VICTORIA.instantiate()
-		$capavictoria.add_child(pantalla_victoria)
+		#SALTAR A PANTALLA DE VICTORIA:
+		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
