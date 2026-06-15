@@ -23,10 +23,3 @@ func _on_area_entered(area: Area2D) -> void:
 		queue_free()
 		return
 		
-	#var padre = area.get_parent()
-	#if padre != null:
-	#	var gestor = padre.get_node_or_null("GestorDeHp") 
-	#	if gestor != null and gestor.has_method("recibir_danio"):
-	#		gestor.recibir_danio(danio)
-	#		queue_free()
-	#		return

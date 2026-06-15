@@ -1,10 +1,12 @@
 extends Control
 @onready var label_monedas_final: Label = $monedas
 @onready var label_tomates_final: Label = $tomates
+@onready var texto_derrota: Label = $Mensaje_derrota/texto_derrota
 
 func _ready() -> void:
 	label_monedas_final.text = str(GameManager.monedas)
 	label_tomates_final.text = str(GameManager.tomates_cosechados)
+	texto_derrota.text = GameManager.mensaje_derrota
 
 
 func _on_volver_a_intentar_pressed() -> void:

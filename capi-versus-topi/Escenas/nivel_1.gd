@@ -56,11 +56,11 @@ func mostrar_mensaje(msj: String) -> void:
 	mensajes.hide()
 
 func fase_huerta (tiempo: float) -> void:
-	mostrar_mensaje("Tienes " + str(int(tiempo_huerta)) + " segundos para plantar!!!")
+	mostrar_mensaje("Tienes " + str(int(tiempo_huerta)) + " segundos para plantar!\n Arrastra las semillas a la tierra")
 	await get_tree().create_timer(tiempo).timeout
 
 func fase_oleada (tiempo: float) -> void:
-	mostrar_mensaje("Cuidado que vienen los topos!!!")
+	mostrar_mensaje("Cuidado que vienen los topos!\n Disparales con la tecla SPACE")
 	spawner_topos.get_node("TimerOleada").start()	
 	await get_tree().create_timer(tiempo).timeout
 	
