@@ -8,6 +8,7 @@ var limite_de_plantas_para_perder : int= 50 #Si topi rompe 10 plantas Capi pierd
 var tomates_cosechados: int = 0
 var ruta_siguiente_nivel: String = ""
 var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
+var mensaje_derrota: String = ""
 
 #Diccionario de mejoras para comprar con monedas:
 var mejoras_desbloqueadas: Dictionary ={
@@ -23,11 +24,13 @@ signal actualizar_monedas(cantidad: int)
 signal game_over
 
 
+
 #Aca vienen las funciones
 func registrar_planta_destruida() -> void:
 	plantas_destruidas += 1
 	
 	if plantas_destruidas >= limite_de_plantas_para_perder:
+		mensaje_derrota = "Perdiste! los topos destrozaron demasiadas plantas!"
 		activar_game_over()
 		
 func activar_game_over() -> void:
@@ -35,7 +38,7 @@ func activar_game_over() -> void:
 	monedas = 0
 	limpiar_mejoras()
 	game_over.emit()
-	get_tree().change_scene_to_file("res://perdiste.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://perdiste.tscn")
 	
 		
 #SEPARO EL PUNTAJE DE TOPOS DERROTADOS DE LAS MONEDAS QUE VA A DAR LA HUERTA

@@ -48,4 +48,5 @@ debug_color = Color(0.9386184, 0.1948868, 0.39987773, 0.41960785)
 [connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
 [connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]
 [connection signal="timeout" from="TimerDisparo" to="." method="_on_timer_disparo_timeout"]
+[connection signal="body_entered" from="GestorDeHp" to="." method="_on_gestor_de_hp_body_entered"]
 [connection signal="impacto_recibido" from="GestorDeHp" to="." method="_on_gestor_de_hp_impacto_recibido"]

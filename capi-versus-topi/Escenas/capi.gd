@@ -13,7 +13,8 @@ var topos_en_area_vision: int = 0
 var puede_disparar_manual: bool = true
 
 func _ready() -> void:
-	$GestorDeHp.impacto_recibido.connect(_on_gestor_de_hp_impacto_recibido)
+	#$GestorDeHp.impacto_recibido.connect(_on_gestor_de_hp_impacto_recibido)
+	#$GestorDeHp.body_entered.connect(_on_gestor_de_hp_body_entered)
 	pass
 
 #agrgado_manual con barra espaciadora
@@ -60,9 +61,16 @@ func disparar() -> void:
 
 func morir() -> void:
 	print("Capi murió... Game Over!!!")
+	GameManager.mensaje_derrota = "Perdiste! Capi se quedó sin fuerza para defender la huerta!"
 	GameManager.activar_game_over()
 	queue_free()
 
 
 func _on_gestor_de_hp_impacto_recibido(hp: int) -> void:
 	GameManager.actualizar_vida_capi.emit(hp)
+
+
+func _on_gestor_de_hp_body_entered(body: Node2D) -> void:
+	if body is Topi:
+		GameManager.mensaje_derrota = "Perdiste! Los topos invadieron la huerta!"
+		GameManager.activar_game_over()
