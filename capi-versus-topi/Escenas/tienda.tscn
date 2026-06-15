@@ -40,7 +40,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=739202623]
+[node name="BotonCanion" type="TextureButton" parent="." unique_id=739202623]
 offset_left = 487.0
 offset_top = 357.99997
 offset_right = 826.0
@@ -48,7 +48,7 @@ offset_bottom = 696.0
 scale = Vector2(0.9200001, 0.9200001)
 texture_normal = ExtResource("7_56r47")
 
-[node name="Label" type="Label" parent="TextureButton" unique_id=1923378861]
+[node name="Label" type="Label" parent="BotonCanion" unique_id=1923378861]
 layout_mode = 0
 offset_left = 42.391327
 offset_top = 242.39133
@@ -59,7 +59,7 @@ label_settings = ExtResource("4_lpnfq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=712738682]
+[node name="BotonSuperSemillas" type="TextureButton" parent="." unique_id=712738682]
 offset_left = 934.99994
 offset_top = 358.0
 offset_right = 1274.0
@@ -67,7 +67,7 @@ offset_bottom = 696.0
 scale = Vector2(0.9200001, 0.9200001)
 texture_normal = ExtResource("8_lvtqr")
 
-[node name="Label" type="Label" parent="TextureButton2" unique_id=1845986246]
+[node name="Label" type="Label" parent="BotonSuperSemillas" unique_id=1845986246]
 layout_mode = 0
 offset_left = 47.826088
 offset_top = 242.3913
@@ -105,7 +105,7 @@ offset_right = 1209.0
 offset_bottom = 916.0
 texture_normal = ExtResource("7_lpnfq")
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="BotonCanion" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="BotonSuperSemillas" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]

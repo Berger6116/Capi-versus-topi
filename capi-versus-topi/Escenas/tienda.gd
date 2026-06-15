@@ -1,16 +1,37 @@
 extends Node2D
 
 
+@onready var boton_canion: TextureButton = $BotonCanion
+@onready var boton_super_semillas: TextureButton = $BotonSuperSemillas
+@onready var boton_escudo: TextureButton = $TextureButton3
+
+
+func _ready() -> void:
+	#GameManager.monedas=30
+	actualizar_botones()
+
+func actualizar_botones() -> void:
+	boton_canion.disabled = GameManager.mejoras_desbloqueadas["canion_techo"] or GameManager.monedas < GameManager.precios_mejoras["canion_techo"]
+	boton_super_semillas.disabled = GameManager.mejoras_desbloqueadas["semillas_poderosas"] or GameManager.monedas < GameManager.precios_mejoras["semillas_poderosas"]
+	boton_escudo.disabled = GameManager.mejoras_desbloqueadas["arma_mejorada"] or GameManager.monedas < GameManager.precios_mejoras["arma_mejorada"]
+	
+	boton_canion.modulate = Color(0.5, 0.5, 0.5) if boton_canion.disabled else Color(1, 1, 1)
+	boton_super_semillas.modulate = Color(0.5, 0.5, 0.5) if boton_super_semillas.disabled else Color(1, 1, 1)
+	boton_escudo.modulate = Color(0.5, 0.5, 0.5) if boton_escudo.disabled else Color(1, 1, 1)
+
 func _on_texture_button_pressed() -> void:
-	GameManager.tienda_comprar("canion_techo", 150)
+	GameManager.tienda_comprar("canion_techo")
+	actualizar_botones()
 
 
 func _on_texture_button_2_pressed() -> void:
-	GameManager.tienda_comprar("semillas_poderosas", 50)
+	GameManager.tienda_comprar("semillas_poderosas")
+	actualizar_botones()
 	
 
 func _on_texture_button_3_pressed() -> void:
-	GameManager.tienda_comprar("arma_mejorada", 100)
+	GameManager.tienda_comprar("arma_mejorada")
+	actualizar_botones()
 
 
 func _on_siguiente_nivel_pressed() -> void:
