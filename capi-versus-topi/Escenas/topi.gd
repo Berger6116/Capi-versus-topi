@@ -85,5 +85,5 @@ func _on_gestor_de_hp_area_exited(area: Area2D) -> void:
 	if area.get_parent() == planta_actual:
 		planta_actual = null
 		gestorHp_planta_actual = null
-		if is_inside_tree():
+		if is_inside_tree() and $TimerAtaque.is_inside_tree():
 			$TimerAtaque.start()
