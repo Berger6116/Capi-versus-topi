@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://h33oy07a5gwk"]
 
 [ext_resource type="Script" uid="uid://cuoc1qstm0d6l" path="res://perdiste.gd" id="1_d53tk"]
-[ext_resource type="Texture2D" uid="uid://dh5c8l4361krc" path="res://Assets/nivel_1_fallado.png" id="1_juf4p"]
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_6iysm"]
 [ext_resource type="Texture2D" uid="uid://d2l313lxt40vd" path="res://botones/ir_al_mapa.png" id="3_6iysm"]
+[ext_resource type="Texture2D" uid="uid://uh62tgfekti3" path="res://Assets/nivel_fallado.png" id="3_jwnfd"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="5_jwnfd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_greie"]
@@ -27,7 +27,7 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 1923.0
 offset_bottom = 1075.0
-texture = ExtResource("1_juf4p")
+texture = ExtResource("3_jwnfd")
 
 [node name="volver_a_intentar" type="TextureButton" parent="." unique_id=1035615317]
 layout_mode = 0
@@ -71,6 +71,7 @@ vertical_alignment = 1
 [node name="Mensaje_derrota" type="CanvasLayer" parent="." unique_id=1954351642]
 
 [node name="ColorRect" type="ColorRect" parent="Mensaje_derrota" unique_id=1154997022]
+visible = false
 offset_left = 664.0
 offset_top = 279.0
 offset_right = 704.0
