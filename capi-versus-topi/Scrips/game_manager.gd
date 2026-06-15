@@ -4,7 +4,7 @@ extends Node
 var topos_derrotados: int = 0
 var monedas: int = 0
 var plantas_destruidas: int = 0
-var limite_de_plantas_para_perder : int= 50 #Si topi rompe 10 plantas Capi pierde
+var limite_de_plantas_para_perder : int= 50 #Si topi rompe 50 plantas Capi pierde
 var tomates_cosechados: int = 0
 var ruta_siguiente_nivel: String = ""
 var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
@@ -28,8 +28,8 @@ signal game_over
 #Aca vienen las funciones
 func registrar_planta_destruida() -> void:
 	plantas_destruidas += 1
-	
-	if plantas_destruidas >= limite_de_plantas_para_perder:
+	var plantas_instanciadas = get_tree().get_nodes_in_group("plantas").size()
+	if plantas_destruidas >= limite_de_plantas_para_perder and plantas_instanciadas <=1:
 		mensaje_derrota = "Perdiste! los topos destrozaron demasiadas plantas!"
 		activar_game_over()
 		
@@ -63,7 +63,7 @@ func tienda_comprar(item: String, precio: int) -> bool:
 		monedas -= precio
 		mejoras_desbloqueadas[item] = true
 		actualizar_monedas.emit(monedas)
-		print("Compra exitosa! Descloqueaste: ", item)
+		print("Compra exitosa! Desbloqueaste: ", item)
 		return true
 	else:
 		print("No tenes suficientes monedas o ya lo tenes")
