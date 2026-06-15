@@ -45,6 +45,7 @@ func morder_planta() -> void:
 	if is_instance_valid(gestorHp_planta_actual):
 		print("El topo está mordiendo la planta")
 		gestorHp_planta_actual.recibir_danio(danio_mordida)
+		$ParticulasMordida.restart()
 	
 func recibir_danio(dmg: int) -> void:
 	vida-= dmg
