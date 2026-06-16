@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cdewfpqbchsxn" path="res://Assets/botonCanasta.png" id="6_gimqf"]
 [ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="7_467ac"]
 [ext_resource type="Script" uid="uid://e4alhvcp1qsc" path="res://Escenas/puntaje_prov.gd" id="7_gimqf"]
-[ext_resource type="Texture2D" uid="uid://db6ourjk8ufqs" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
-[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
+[ext_resource type="Texture2D" uid="uid://ydjkwxko2a7n" path="res://Assets/botonescudo.png" id="7_u24l1"]
+[ext_resource type="Texture2D" uid="uid://blph63rq02j68" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
+[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="11_3ssh1"]
 [ext_resource type="Texture2D" uid="uid://dl3mqse37vu4u" path="res://Assets/UI_barra_vida_base.png" id="12_qfr17"]
 [ext_resource type="Script" uid="uid://bqachtkgjfo84" path="res://Escenas/topos_derrotados.gd" id="13_3of7u"]
@@ -28,11 +29,17 @@ metadata/_edit_lock_ = true
 [node name="parcelaTierra6" parent="." unique_id=1817082500 instance=ExtResource("3_lt0pu")]
 position = Vector2(912, 696)
 
+[node name="parcelaTierra6" parent="parcelaTierra6" unique_id=1531952277 instance=ExtResource("3_lt0pu")]
+position = Vector2(123, 1)
+
 [node name="parcelaTierra3" parent="." unique_id=1681226325 instance=ExtResource("3_lt0pu")]
 position = Vector2(786, 695)
 
 [node name="parcelaTierra5" parent="." unique_id=1816717725 instance=ExtResource("3_lt0pu")]
 position = Vector2(855, 735)
+
+[node name="parcelaTierra5" parent="parcelaTierra5" unique_id=1980774878 instance=ExtResource("3_lt0pu")]
+position = Vector2(122, 2)
 
 [node name="parcelaTierra2" parent="." unique_id=1798375435 instance=ExtResource("3_lt0pu")]
 position = Vector2(729, 734)
@@ -40,7 +47,10 @@ position = Vector2(729, 734)
 [node name="parcelaTierra4" parent="." unique_id=1213065538 instance=ExtResource("3_lt0pu")]
 position = Vector2(798, 776)
 
-[node name="parcelaTierra" parent="." unique_id=1531952277 instance=ExtResource("3_lt0pu")]
+[node name="parcelaTierra4" parent="parcelaTierra4" unique_id=947490640 instance=ExtResource("3_lt0pu")]
+position = Vector2(124, 2)
+
+[node name="parcelaTierra" parent="." unique_id=30648409 instance=ExtResource("3_lt0pu")]
 position = Vector2(672, 775)
 
 [node name="BotonesHuerta" type="CanvasLayer" parent="." unique_id=177640428]
@@ -66,23 +76,32 @@ texture_normal = ExtResource("4_h2qel")
 
 [node name="BotonRegadera" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=770475113]
 layout_mode = 0
-offset_left = 931.99994
+offset_left = 917.9999
 offset_top = 40.0
-offset_right = 1365.0
-offset_bottom = 411.0
+offset_right = 1259.6682
+offset_bottom = 378.0
 scale = Vector2(0.5999975, 0.59999776)
 focus_mode = 0
 texture_normal = ExtResource("5_467ac")
 
 [node name="BotonCanasta" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=296826588]
 layout_mode = 0
-offset_left = 1171.0
+offset_left = 1145.0
 offset_top = 40.0
-offset_right = 1510.0
+offset_right = 1484.0
 offset_bottom = 378.0
 scale = Vector2(0.6000049, 0.6000049)
 focus_mode = 0
 texture_normal = ExtResource("6_gimqf")
+
+[node name="BotonEscudo" type="TextureButton" parent="BotonesHuerta/ContenedorFade" unique_id=2015451612]
+layout_mode = 0
+offset_left = 1373.0
+offset_top = 37.0
+offset_right = 1712.0
+offset_bottom = 376.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("7_u24l1")
 
 [node name="Monedas" type="CanvasLayer" parent="." unique_id=932468122]
 script = ExtResource("7_gimqf")
@@ -141,3 +160,4 @@ texture_progress = ExtResource("13_d2ylm")
 [connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonSemillas" to="BotonesHuerta" method="_on_boton_semillas_button_down"]
 [connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonRegadera" to="BotonesHuerta" method="_on_boton_regadera_button_down"]
 [connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonCanasta" to="BotonesHuerta" method="_on_boton_canasta_button_down"]
+[connection signal="button_down" from="BotonesHuerta/ContenedorFade/BotonEscudo" to="BotonesHuerta" method="_on_boton_escudo_button_down"]
