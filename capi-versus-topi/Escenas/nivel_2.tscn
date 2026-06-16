@@ -63,3 +63,5 @@ position = Vector2(969, 794)
 scale = Vector2(99.48, 2.12)
 shape = SubResource("RectangleShape2D_mbn1r")
 debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
+
+[node name="capavictoria" type="CanvasLayer" parent="." unique_id=2120758840]

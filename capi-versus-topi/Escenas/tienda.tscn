@@ -6,15 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_v3u34"]
 [ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="3_a2w3w"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="4_lpnfq"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://d1tdyp0ork6y2" path="res://Assets/cajaBoton.png" id="6_lpnfq"]
-[ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="7_lpnfq"]
-=======
 [ext_resource type="Texture2D" uid="uid://cxuwudpudawuu" path="res://Assets/botonCanion.png" id="7_56r47"]
 [ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="7_lpnfq"]
+
 [ext_resource type="Texture2D" uid="uid://bfdhkjddup50i" path="res://Assets/botonSuperSemillas.png" id="8_lvtqr"]
-[ext_resource type="Texture2D" uid="uid://ydjkwxko2a7n" path="res://Assets/botonescudo.png" id="9_56r47"]
->>>>>>> Stashed changes
+
 
 [node name="Tienda" type="Node2D" unique_id=727019992]
 script = ExtResource("1_a2w3w")
@@ -46,45 +43,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=739202623]
+[node name="BotonCanion" type="TextureButton" parent="." unique_id=739202623]
 offset_left = 487.0
 offset_top = 357.99997
 offset_right = 826.0
 offset_bottom = 696.0
 scale = Vector2(0.9200001, 0.9200001)
-texture_normal = ExtResource("6_lpnfq")
+texture_normal = ExtResource("7_56r47")
 
-[node name="Label" type="Label" parent="TextureButton" unique_id=1923378861]
+[node name="Label" type="Label" parent="BotonCanion" unique_id=1923378861]
 layout_mode = 0
-offset_left = 35.869564
-offset_top = 108.69569
-offset_right = 306.86957
-offset_bottom = 222.69568
-text = "COMPRAR 
-CAÑON
-TECHO"
+offset_left = 42.391327
+offset_top = 242.39133
+offset_right = 294.56522
+offset_bottom = 298.91306
+text = "$150"
 label_settings = ExtResource("4_lpnfq")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=712738682]
+[node name="BotonSuperSemillas" type="TextureButton" parent="." unique_id=712738682]
 offset_left = 934.99994
 offset_top = 358.0
 offset_right = 1274.0
 offset_bottom = 696.0
 scale = Vector2(0.9200001, 0.9200001)
-texture_normal = ExtResource("6_lpnfq")
+texture_normal = ExtResource("8_lvtqr")
 
-[node name="Label" type="Label" parent="TextureButton2" unique_id=1845986246]
+[node name="Label" type="Label" parent="BotonSuperSemillas" unique_id=1845986246]
 layout_mode = 0
-offset_left = 33.695717
-offset_top = 108.69562
-offset_right = 304.6957
-offset_bottom = 222.69562
-text = "COMPRAR 
-ARMA
-MEJORADA"
+offset_left = 47.826088
+offset_top = 242.3913
+offset_right = 297.82608
+offset_bottom = 298.91302
+text = "$100"
 label_settings = ExtResource("4_lpnfq")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BotonValla" type="TextureButton" parent="." unique_id=1377412759]
 offset_left = 1324.9999
@@ -111,13 +106,12 @@ offset_right = 1209.0
 offset_bottom = 916.0
 texture_normal = ExtResource("7_lpnfq")
 
-<<<<<<< Updated upstream
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
-=======
+
 [connection signal="pressed" from="BotonCanion" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="BotonSuperSemillas" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="BotonValla" to="." method="_on_texture_button_3_pressed"]
->>>>>>> Stashed changes
+
 [connection signal="pressed" from="siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]

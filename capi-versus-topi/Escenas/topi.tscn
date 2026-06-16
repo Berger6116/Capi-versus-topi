@@ -3,13 +3,19 @@
 [ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_8cqlv"]
 [ext_resource type="Texture2D" uid="uid://d0070ylvg0ihf" path="res://Assets/topo.png" id="2_80y2p"]
 [ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
+[ext_resource type="Texture2D" uid="uid://dvb7qimo5jvpa" path="res://Assets/hojita.png" id="4_2jxxs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80y2p"]
-size = Vector2(27.186756, 45.129875)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80y2p"]
+radius = 12.765954
+height = 44.72403
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwrm4"]
-radius = 13.983052
-height = 43.14024
+radius = 13.892252
+height = 43.64035
+
+[sub_resource type="Gradient" id="Gradient_2jxxs"]
+offsets = PackedFloat32Array(0, 0.6792453, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.8392157, 1, 1, 1, 0)
 
 [node name="Topi" type="CharacterBody2D" unique_id=2049850128]
 scale = Vector2(0.4, 0.4)
@@ -23,7 +29,7 @@ texture = ExtResource("2_80y2p")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2046681861]
 position = Vector2(-0.9999981, -13)
 scale = Vector2(16.920004, 12.32)
-shape = SubResource("RectangleShape2D_80y2p")
+shape = SubResource("CapsuleShape2D_80y2p")
 metadata/_edit_lock_ = true
 
 [node name="GestorDeHp" parent="." unique_id=701457431 instance=ExtResource("3_80y2p")]
@@ -38,4 +44,26 @@ metadata/_edit_lock_ = true
 wait_time = 4.264
 autostart = true
 
+[node name="ParticulasMordida" type="CPUParticles2D" parent="." unique_id=711771274]
+position = Vector2(-217.5, -30)
+emitting = false
+amount = 10
+texture = ExtResource("4_2jxxs")
+one_shot = true
+preprocess = 0.45
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(-50, 0)
+spread = 66.32
+gravity = Vector2(0, 80)
+initial_velocity_min = 53.68
+initial_velocity_max = 344.84
+angle_max = 360.0
+scale_amount_min = 0.0
+color = Color(0.003921569, 0.5764706, 0.15294118, 1)
+color_ramp = SubResource("Gradient_2jxxs")
+
+[connection signal="area_entered" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_entered"]
+[connection signal="area_exited" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_exited"]
 [connection signal="timeout" from="TimerAtaque" to="." method="_on_timer_ataque_timeout"]

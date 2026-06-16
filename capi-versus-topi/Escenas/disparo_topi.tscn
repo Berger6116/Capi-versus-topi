@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d4p8cyoqya0x"]
 
 [ext_resource type="Script" uid="uid://dia4b7jmtixwx" path="res://Escenas/disparo_topi.gd" id="1_yuwfm"]
-[ext_resource type="Texture2D" uid="uid://drgoq5njcpxd3" path="res://Assets/cristales_verdes.png" id="2_5xej1"]
+[ext_resource type="Texture2D" uid="uid://bbfmijmtaho1m" path="res://Assets/cristales_verdes.png" id="2_5xej1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xej1"]
 size = Vector2(36, 23)
 
-[node name="disparo_topi" type="Area2D" unique_id=1295119535]
+[node name="disparo_topi" type="Area2D" unique_id=1295119535 groups=["balas_topi"]]
 collision_layer = 8
 script = ExtResource("1_yuwfm")
 

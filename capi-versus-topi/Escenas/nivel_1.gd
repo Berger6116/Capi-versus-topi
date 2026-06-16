@@ -13,7 +13,8 @@ extends Node2D
 var mejora_canion_techo = preload("res://Escenas/canion_techo.tscn")
 
 func _ready() -> void:
-	GameManager.topos_muertos_por_nivel = topos_a_derrotar	
+	GameManager.topos_muertos_por_nivel = topos_a_derrotar
+	GameManager.actualizar_topos.emit(GameManager.topos_derrotados)
 	GameManager.actualizar_topos.connect(chequear_victoria)
 	
 	#PARA PROBAR CAÑON:
@@ -55,11 +56,11 @@ func mostrar_mensaje(msj: String) -> void:
 	mensajes.hide()
 
 func fase_huerta (tiempo: float) -> void:
-	mostrar_mensaje("Tienes " + str(int(tiempo_huerta)) + " segundos para plantar!!!")
+	mostrar_mensaje("Tienes " + str(int(tiempo_huerta)) + " segundos para plantar!\n Arrastra las semillas a la tierra")
 	await get_tree().create_timer(tiempo).timeout
 
 func fase_oleada (tiempo: float) -> void:
-	mostrar_mensaje("Cuidado que vienen los topos!!!")
+	mostrar_mensaje("Cuidado que vienen los topos!\n Disparales con la tecla SPACE")
 	spawner_topos.get_node("TimerOleada").start()	
 	await get_tree().create_timer(tiempo).timeout
 	
@@ -83,7 +84,7 @@ func instanciar_mejoras() -> void:
 		nuevo_canion.global_position = Vector2(0, 40)
 		add_child(nuevo_canion)
 	
-
+#const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
 func chequear_victoria (topos_muertos: int) -> void:
 	
 	if topos_muertos >= topos_a_derrotar:
@@ -93,13 +94,7 @@ func chequear_victoria (topos_muertos: int) -> void:
 			timer.stop()
 		#señal para eliminar topos restantes:
 		spawner_topos.eliminar_topos_restantes.emit()
-		#Ocultar botones de huerta:
-		fade_out(botones_huerta, 0.5)
-		#mostrar cartel de victoria:
-		#mensajes.text = "Nivel 1 completado!!!"
-		#mensajes.show()
 		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
 		GameManager.ruta_siguiente_nivel = siguiente_escena
 		#SALTAR A PANTALLA DE VICTORIA:
-		get_tree().change_scene_to_file("res://nivel_1_completado.tscn")
-		
+		get_tree().call_deferred("change_scene_to_file", "res://nivel_1_completado.tscn")

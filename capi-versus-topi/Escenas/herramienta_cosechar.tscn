@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://dwldhkwxjru4j"]
 
 [ext_resource type="Script" uid="uid://b2rpgo7pf0mx3" path="res://Escenas/herramienta_cosechar.gd" id="1_flmdo"]
-[ext_resource type="Texture2D" uid="uid://bb8rwsfmvrpea" path="res://Assets/canasta.PNG" id="1_k82as"]
+[ext_resource type="Texture2D" uid="uid://46ft1geotrga" path="res://Assets/canasta.PNG" id="1_k82as"]
 [ext_resource type="PackedScene" uid="uid://cigksl8ii6dv3" path="res://Escenas/d&d_component.tscn" id="2_flmdo"]
+[ext_resource type="Shader" uid="uid://d2ri7egm4arn1" path="res://Scrips/brillo_herramientas.gdshader" id="2_kl0sg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sksog"]
+shader = ExtResource("2_kl0sg")
+shader_parameter/glow_intensity = 3.7320001772699998
+shader_parameter/glow_color = Color(1, 0.9490196, 0.69803923, 1)
+shader_parameter/glow_width = 16.338000776055
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl0sg"]
 
@@ -10,6 +17,7 @@
 script = ExtResource("1_flmdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2041721258]
+material = SubResource("ShaderMaterial_sksog")
 scale = Vector2(0.43999934, 0.43999934)
 texture = ExtResource("1_k82as")
 

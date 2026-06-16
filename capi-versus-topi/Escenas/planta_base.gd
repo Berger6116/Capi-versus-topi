@@ -22,6 +22,7 @@ var fase_actual: FasePlanta = FasePlanta.BROTE
 
 
 func _ready() -> void:
+	add_to_group("plantas")
 	actualizar_dibujo()
 	
 func actualizar_dibujo() -> void:
@@ -60,6 +61,7 @@ func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
 		print("planta cosechada")
 		GameManager.sumar_monedas_huerta(30)
+		GameManager.tomates_cosechados += 1
 		aparecer_moneda()
 		return true
 	else:
