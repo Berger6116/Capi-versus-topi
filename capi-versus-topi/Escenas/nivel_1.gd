@@ -81,7 +81,7 @@ func fade_in(nodo: Node, tiempo: float) ->void:
 func instanciar_mejoras() -> void:
 	if GameManager.mejoras_desbloqueadas["canion_techo"] == true:
 		var nuevo_canion = mejora_canion_techo.instantiate()
-		nuevo_canion.global_position = Vector2(0, 40)
+		#nuevo_canion.global_position = global_position
 		add_child(nuevo_canion)
 	
 #const ESCENA_VICTORIA = preload("res://nivel_1_completado.tscn")
