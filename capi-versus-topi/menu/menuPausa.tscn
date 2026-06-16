@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://2u6o5tnmqxoi"]
+
+[ext_resource type="Script" uid="uid://dm7ml0ev16m7r" path="res://menu/menu_pausa.gd" id="1_hfjem"]
+[ext_resource type="Texture2D" uid="uid://1mrxbndl3dhc" path="res://botones/exit.png" id="1_qgnjq"]
+[ext_resource type="Texture2D" uid="uid://c27a6la8xxajt" path="res://botones/exit_oscuro.png" id="2_hfjem"]
+[ext_resource type="Texture2D" uid="uid://ceoxhwdytghfy" path="res://botones/play.png" id="3_lk3lu"]
+[ext_resource type="Texture2D" uid="uid://ce1pofx1i2wew" path="res://botones/play_oscuro.png" id="4_mnd48"]
+[ext_resource type="Texture2D" uid="uid://cd2f5sm4uqxc6" path="res://botones/setting.png" id="5_7k04b"]
+[ext_resource type="Texture2D" uid="uid://b7s66q53mpfik" path="res://botones/setting_oscuro.png" id="6_kaj2x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ssn6d"]
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=887899197]
+process_mode = 2
+layer = 1000
+script = ExtResource("1_hfjem")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=541138748]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 0.6666667)
+
+[node name="exit" type="TextureButton" parent="." unique_id=1095973478]
+custom_minimum_size = Vector2(50, 20)
+offset_left = 845.0
+offset_top = 549.0
+offset_right = 1106.0
+offset_bottom = 699.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_qgnjq")
+texture_pressed = ExtResource("2_hfjem")
+texture_hover = ExtResource("2_hfjem")
+ignore_texture_size = true
+
+[node name="play" type="TextureButton" parent="." unique_id=972008202]
+custom_minimum_size = Vector2(100, 50)
+offset_left = 838.0
+offset_top = 319.0
+offset_right = 1138.0
+offset_bottom = 469.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_lk3lu")
+texture_pressed = SubResource("CompressedTexture2D_ssn6d")
+texture_hover = ExtResource("4_mnd48")
+
+[node name="setting" type="TextureButton" parent="." unique_id=1804605924]
+custom_minimum_size = Vector2(50, 20)
+offset_left = 835.0
+offset_top = 433.0
+offset_right = 1075.0
+offset_bottom = 550.0
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_7k04b")
+texture_pressed = ExtResource("6_kaj2x")
+texture_hover = ExtResource("6_kaj2x")
+ignore_texture_size = true
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
