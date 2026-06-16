@@ -16,6 +16,12 @@ var mejoras_desbloqueadas: Dictionary ={
 	"semillas_poderosas": false, # inventar planta nueva
 	"arma_mejorada": false # inventar arma nueva
 }
+#diccionario para los precios:
+var precios_mejoras: Dictionary={
+	"canion_techo": 150,
+	"semillas_poderosas": 100, # inventar planta nueva
+	"arma_mejorada": 100 # inventar arma nueva
+}
 
 #SEÑALES
 signal actualizar_vida_capi(hp_actual: int)
@@ -58,7 +64,9 @@ func resetear_para_nuevo_nivel():
 	topos_muertos_por_nivel = 0
 	print("variables topos y plantas derrotados a CERO")
 	
-func tienda_comprar(item: String, precio: int) -> bool:
+func tienda_comprar(item: String) -> bool:
+	var precio = precios_mejoras[item]
+	
 	if monedas >= precio and mejoras_desbloqueadas[item] == false:
 		monedas -= precio
 		mejoras_desbloqueadas[item] = true
