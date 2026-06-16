@@ -1,6 +1,27 @@
 extends Node2D
 
 
+<<<<<<< Updated upstream
+=======
+@onready var boton_canion: TextureButton = $BotonCanion
+@onready var boton_super_semillas: TextureButton = $BotonSuperSemillas
+@onready var boton_escudo: TextureButton = $BotonValla
+
+
+func _ready() -> void:
+	#GameManager.monedas=30
+	actualizar_botones()
+
+func actualizar_botones() -> void:
+	boton_canion.disabled = GameManager.mejoras_desbloqueadas["canion_techo"] or GameManager.monedas < GameManager.precios_mejoras["canion_techo"]
+	boton_super_semillas.disabled = GameManager.mejoras_desbloqueadas["semillas_poderosas"] or GameManager.monedas < GameManager.precios_mejoras["semillas_poderosas"]
+	boton_escudo.disabled = GameManager.mejoras_desbloqueadas["arma_mejorada"] or GameManager.monedas < GameManager.precios_mejoras["arma_mejorada"]
+	
+	boton_canion.modulate = Color(0.5, 0.5, 0.5) if boton_canion.disabled else Color(1, 1, 1)
+	boton_super_semillas.modulate = Color(0.5, 0.5, 0.5) if boton_super_semillas.disabled else Color(1, 1, 1)
+	boton_escudo.modulate = Color(0.5, 0.5, 0.5) if boton_escudo.disabled else Color(1, 1, 1)
+
+>>>>>>> Stashed changes
 func _on_texture_button_pressed() -> void:
 	GameManager.tienda_comprar("canion_techo", 150)
 
