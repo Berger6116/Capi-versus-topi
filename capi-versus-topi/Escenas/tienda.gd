@@ -1,6 +1,8 @@
 extends Node2D
 
-
+@onready var boton_canion: TextureButton = $BotonCanion
+@onready var boton_super_semillas: TextureButton = $BotonSuperSemillas
+@onready var boton_escudo: TextureButton = $TextureButton3
 
 
 func _ready() -> void:
