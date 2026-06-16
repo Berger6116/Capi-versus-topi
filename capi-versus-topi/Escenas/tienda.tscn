@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_v3u34"]
 [ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="3_a2w3w"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="4_lpnfq"]
-[ext_resource type="Texture2D" uid="uid://d1tdyp0ork6y2" path="res://Assets/cajaBoton.png" id="6_lpnfq"]
 [ext_resource type="Texture2D" uid="uid://cxuwudpudawuu" path="res://Assets/botonCanion.png" id="7_56r47"]
 [ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="7_lpnfq"]
 [ext_resource type="Texture2D" uid="uid://bfdhkjddup50i" path="res://Assets/botonSuperSemillas.png" id="8_lvtqr"]
+[ext_resource type="Texture2D" uid="uid://bqy00nrhf00n8" path="res://Assets/botonescudo.png" id="9_56r47"]
 
 [node name="Tienda" type="Node2D" unique_id=727019992]
 script = ExtResource("1_a2w3w")
@@ -107,5 +107,5 @@ texture_normal = ExtResource("7_lpnfq")
 
 [connection signal="pressed" from="BotonCanion" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="BotonSuperSemillas" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="BotonValla" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]
