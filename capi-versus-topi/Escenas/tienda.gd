@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var boton_canion: TextureButton = $BotonCanion
 @onready var boton_super_semillas: TextureButton = $BotonSuperSemillas
 @onready var boton_escudo: TextureButton = $TextureButton3
@@ -18,6 +17,7 @@ func actualizar_botones() -> void:
 	boton_canion.modulate = Color(0.5, 0.5, 0.5) if boton_canion.disabled else Color(1, 1, 1)
 	boton_super_semillas.modulate = Color(0.5, 0.5, 0.5) if boton_super_semillas.disabled else Color(1, 1, 1)
 	boton_escudo.modulate = Color(0.5, 0.5, 0.5) if boton_escudo.disabled else Color(1, 1, 1)
+
 
 func _on_texture_button_pressed() -> void:
 	GameManager.tienda_comprar("canion_techo")

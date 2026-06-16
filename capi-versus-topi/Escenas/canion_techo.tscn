@@ -9,6 +9,8 @@ size = Vector2(11.871458, 37.878788)
 
 [node name="CanionTecho" type="Node2D" unique_id=720275177]
 script = ExtResource("2_71802")
+metadata/_edit_horizontal_guides_ = [798.0, 223.0]
+metadata/_edit_vertical_guides_ = [419.0]
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=207487960]
 visible = false
