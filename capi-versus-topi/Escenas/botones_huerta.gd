@@ -44,6 +44,7 @@ func _on_boton_canasta_button_down() -> void:
 
 func _on_boton_escudo_button_down() -> void:
 	var nuevo_escudo = herramienta_escudo_scene.instantiate()
+	get_parent().add_child(nuevo_escudo)
 	nuevo_escudo.global_position = nuevo_escudo.get_global_mouse_position()
 	var componente_drag_and_drop = nuevo_escudo.get_node("D&dcomponent")
 	componente_drag_and_drop.dragging = true
