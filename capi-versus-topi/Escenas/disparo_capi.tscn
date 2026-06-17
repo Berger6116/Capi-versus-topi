@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d0gq317p8juh7"]
 
 [ext_resource type="Script" uid="uid://d28677th0aqb2" path="res://Escenas/disparo_capi.gd" id="1_1ywdh"]
-[ext_resource type="Texture2D" uid="uid://60u6p05htdwg" path="res://Assets/pala.PNG" id="1_l52h2"]
+[ext_resource type="Texture2D" uid="uid://bro671ef17tsc" path="res://Assets/pala.PNG" id="1_l52h2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ywdh"]
 size = Vector2(20.869564, 20.289856)
 
-[node name="DisparoCapi" type="Area2D" unique_id=886513165]
+[node name="DisparoCapi" type="Area2D" unique_id=886513165 groups=["balas"]]
 scale = Vector2(1.4800001, 1.4800001)
 script = ExtResource("1_1ywdh")
 

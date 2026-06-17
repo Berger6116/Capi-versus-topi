@@ -18,15 +18,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Topi:
 		return
 		
-	if area.has_method("recibir_danio"):
+	if area is GestorDeHP:
 		area.recibir_danio(danio)
 		queue_free()
 		return
 		
-	var padre = area.get_parent()
-	if padre != null:
-		var gestor = padre.get_node_or_null("GestorDeHp") 
-		if gestor != null and gestor.has_method("recibir_danio"):
-			gestor.recibir_danio(danio)
-			queue_free()
-			return
