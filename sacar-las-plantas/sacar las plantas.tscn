@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ck141nk26mvfx"]
+
+[ext_resource type="AudioStream" uid="uid://bhgfihgyxp054" path="res://Minecraft Dirt Sound Effect - Game Sounds.mp3" id="1_qwumk"]
+
+[node name="Node2D" type="Node2D" unique_id=1707722055]
+
+[node name="sacarplantas" type="AudioStreamPlayer2D" parent="." unique_id=310643250]
+stream = ExtResource("1_qwumk")
