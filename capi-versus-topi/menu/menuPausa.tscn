@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ce1pofx1i2wew" path="res://botones/play_oscuro.png" id="4_mnd48"]
 [ext_resource type="Texture2D" uid="uid://cd2f5sm4uqxc6" path="res://botones/setting.png" id="5_7k04b"]
 [ext_resource type="Texture2D" uid="uid://b7s66q53mpfik" path="res://botones/setting_oscuro.png" id="6_kaj2x"]
+[ext_resource type="Texture2D" uid="uid://dqalokn8frgkl" path="res://botones/back.png" id="8_mnd48"]
+[ext_resource type="Texture2D" uid="uid://dm5cdcqm4b4tv" path="res://botones/back_oscuro.png" id="9_7k04b"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ssn6d"]
 
@@ -25,10 +27,10 @@ color = Color(0.15, 0.15, 0.15, 0.6666667)
 
 [node name="exit" type="TextureButton" parent="." unique_id=1095973478]
 custom_minimum_size = Vector2(50, 20)
-offset_left = 845.0
-offset_top = 549.0
-offset_right = 1106.0
-offset_bottom = 699.0
+offset_left = 849.0
+offset_top = 666.0
+offset_right = 1110.0
+offset_bottom = 816.0
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_qgnjq")
 texture_pressed = ExtResource("2_hfjem")
@@ -58,6 +60,16 @@ texture_pressed = ExtResource("6_kaj2x")
 texture_hover = ExtResource("6_kaj2x")
 ignore_texture_size = true
 
+[node name="backMenu" type="TextureButton" parent="." unique_id=626308287]
+offset_left = 840.0
+offset_top = 546.0
+offset_right = 1090.0
+offset_bottom = 674.0
+texture_normal = ExtResource("8_mnd48")
+texture_pressed = ExtResource("9_7k04b")
+texture_hover = ExtResource("9_7k04b")
+
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="backMenu" to="." method="_on_back_menu_pressed"]
