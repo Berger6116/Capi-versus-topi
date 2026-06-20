@@ -10,9 +10,9 @@ func _on_pausar_o_despausar_juego(estado: bool) -> void:
 	
 	
 
-
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+	
 
 
 func _on_play_pressed() -> void:
@@ -21,3 +21,8 @@ func _on_play_pressed() -> void:
 
 func _on_setting_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_back_menu_pressed() -> void:
+	GameManager.pausar_o_despausar_global()
+	get_tree().change_scene_to_file("res://menu/munu.tscn")
