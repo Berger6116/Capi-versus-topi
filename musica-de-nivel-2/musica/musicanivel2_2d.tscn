@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://doo8meb10l5nv"]
+
+[ext_resource type="AudioStream" uid="uid://qcpm3tcpoglj" path="res://musica/The_Cloud_Skipper_s_Path.mp3" id="1_nfxdx"]
+
+[node name="Node2D" type="Node2D" unique_id=1290880555]
+
+[node name="musicanivel2" type="AudioStreamPlayer2D" parent="." unique_id=101028505]
+stream = ExtResource("1_nfxdx")

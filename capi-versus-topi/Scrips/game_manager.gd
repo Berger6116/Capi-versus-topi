@@ -28,10 +28,37 @@ signal actualizar_vida_capi(hp_actual: int)
 signal actualizar_topos(cantidad: int) 
 signal actualizar_monedas(cantidad: int)
 signal game_over
+signal pausar_despausar(estado: bool)
 
-
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+func _process(delta: float) -> void:
+	if estamos_en_algun_menu():
+		return
+		
+	if Input.is_action_just_pressed("pausa"):
+		pausar_o_despausar_global()
 
 #Aca vienen las funciones
+func estamos_en_algun_menu() -> bool:
+	var escena_actual = get_tree().current_scene
+	
+	if not escena_actual:
+		return false
+	
+	var ruta = escena_actual.scene_file_path.to_lower()
+	
+	if "munu" in ruta or "menu" in ruta or "perdiste" in ruta or "splash" in ruta or "completado" in ruta or "credito" in ruta:
+		return true
+	
+	return false
+	
+func pausar_o_despausar_global() -> void:
+	var estado = !get_tree().paused
+	get_tree().paused = estado
+	pausar_despausar.emit(estado)
+	
 func registrar_planta_destruida() -> void:
 	plantas_destruidas += 1
 	var plantas_instanciadas = get_tree().get_nodes_in_group("plantas").size()
