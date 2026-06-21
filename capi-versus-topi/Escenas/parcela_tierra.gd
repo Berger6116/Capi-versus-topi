@@ -19,6 +19,16 @@ func sembrar() -> void:
 	else:
 		print("ya hay una planta acá")
 
+func sembrar_super_semilla() -> void:
+	#si la parcela esta vacia plantamos la semilla:
+	if planta_actual == null:
+		planta_actual = planta_scene.instantiate()
+		add_child(planta_actual)
+		#autoriego modo on:
+		if planta_actual.has_method("activar_auto_crecimiento"):
+			planta_actual.activar_auto_crecimiento()
+	
+
 func regar() -> void:
 	if planta_actual != null:
 		planta_actual.regar()
