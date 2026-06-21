@@ -5,6 +5,7 @@ var planta_scene = preload("res://Escenas/planta_base.tscn")
 var escudo_scene = preload("res://Escenas/escudo.tscn")
 
 var planta_actual: Node2D = null
+var escudo_actual: Node2D = null
 
 
 func _ready() -> void:
@@ -46,10 +47,10 @@ func cosechar() -> void:
 			print("no se pudo cosechar")
 			
 func colocar_escudo() -> void: #Con esta función se coloca la valla, aunque algo salió mal, revisar
-	if planta_actual == null:
-		planta_actual = escudo_scene.instantiate()#Lógica igual a sembrar, pero no quiere funcionar!!
-		add_child(planta_actual)
-		print ("valla colocada en la parcela")
-
+	if escudo_actual == null:
+		escudo_actual = escudo_scene.instantiate()
+		add_child(escudo_actual)
+		escudo_actual.position.x = 35
+		print("Al fin coloqué la valla!!")
 	else:
-		print("No lo pongas acá hay algo")
+		print("Ya hay valla acá")
