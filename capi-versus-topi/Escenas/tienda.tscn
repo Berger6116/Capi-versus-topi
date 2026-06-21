@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://jt2ywyx36jo" path="res://Escenas/tienda.gd" id="1_a2w3w"]
 [ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="2_7flnv"]
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_v3u34"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="3_a2w3w"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="3_a2w3w"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="4_lpnfq"]
 [ext_resource type="Texture2D" uid="uid://cxuwudpudawuu" path="res://Assets/botonCanion.png" id="7_56r47"]
 [ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="7_lpnfq"]
@@ -93,7 +93,7 @@ offset_left = 30.434782
 offset_top = 254.2174
 offset_right = 301.43478
 offset_bottom = 290.2174
-text = "$50"
+text = "$100"
 label_settings = ExtResource("4_lpnfq")
 horizontal_alignment = 1
 
