@@ -6,6 +6,7 @@ var escudo_scene = preload("res://Escenas/escudo.tscn")
 
 var planta_actual: Node2D = null
 
+
 func _ready() -> void:
 	pass
 

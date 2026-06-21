@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var danio: int = 15
+var danio: int = 10
 var fuerza_disparo: float = 1200.0
 
 func _ready() -> void:

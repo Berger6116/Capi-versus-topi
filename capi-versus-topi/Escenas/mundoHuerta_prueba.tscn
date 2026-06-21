@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cdewfpqbchsxn" path="res://Assets/botonCanasta.png" id="6_gimqf"]
 [ext_resource type="Texture2D" uid="uid://c1li1634slr7n" path="res://Assets/UImonedas.png" id="7_467ac"]
 [ext_resource type="Script" uid="uid://e4alhvcp1qsc" path="res://Escenas/puntaje_prov.gd" id="7_gimqf"]
-[ext_resource type="Texture2D" uid="uid://ydjkwxko2a7n" path="res://Assets/botonescudo.png" id="7_u24l1"]
-[ext_resource type="Texture2D" uid="uid://blph63rq02j68" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
+[ext_resource type="Texture2D" uid="uid://bay80kd4qrg7h" path="res://Assets/botonescudo.png" id="7_u24l1"]
+[ext_resource type="Texture2D" uid="uid://db6ourjk8ufqs" path="res://Assets/UIoleada_topos.png" id="9_76q2b"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="10_3ssh1"]
 [ext_resource type="LabelSettings" uid="uid://ycdmqo4jip2u" path="res://tipografias/ui_settings.tres" id="11_3ssh1"]
 [ext_resource type="Texture2D" uid="uid://dl3mqse37vu4u" path="res://Assets/UI_barra_vida_base.png" id="12_qfr17"]
 [ext_resource type="Script" uid="uid://bqachtkgjfo84" path="res://Escenas/topos_derrotados.gd" id="13_3of7u"]
@@ -101,6 +101,7 @@ offset_top = 37.0
 offset_right = 1712.0
 offset_bottom = 376.0
 scale = Vector2(0.6, 0.6)
+focus_mode = 0
 texture_normal = ExtResource("7_u24l1")
 
 [node name="Monedas" type="CanvasLayer" parent="." unique_id=932468122]
