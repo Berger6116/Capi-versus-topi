@@ -55,12 +55,13 @@ label_settings = ExtResource("7_l8lnw")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=132126598]
-position = Vector2(-47, 39)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=219785865]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=736831751]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1013309293]
 position = Vector2(969, 794)
 scale = Vector2(99.48, 2.12)
 shape = SubResource("RectangleShape2D_l8lnw")
 debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
+
+[node name="capavictoria" type="CanvasLayer" parent="." unique_id=1968741784]

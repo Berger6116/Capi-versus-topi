@@ -2,8 +2,10 @@ extends Area2D
 class_name ParcelaTierra
 
 var planta_scene = preload("res://Escenas/planta_base.tscn")
+var escudo_scene = preload("res://Escenas/escudo.tscn")
 
 var planta_actual: Node2D = null
+
 
 func _ready() -> void:
 	pass
@@ -16,6 +18,16 @@ func sembrar() -> void:
 		add_child(planta_actual)
 	else:
 		print("ya hay una planta acá")
+
+func sembrar_super_semilla() -> void:
+	#si la parcela esta vacia plantamos la semilla:
+	if planta_actual == null:
+		planta_actual = planta_scene.instantiate()
+		add_child(planta_actual)
+		#autoriego modo on:
+		if planta_actual.has_method("activar_auto_crecimiento"):
+			planta_actual.activar_auto_crecimiento()
+	
 
 func regar() -> void:
 	if planta_actual != null:
@@ -32,4 +44,12 @@ func cosechar() -> void:
 			planta_actual = null
 		else:
 			print("no se pudo cosechar")
-	
+			
+func colocar_escudo() -> void: #Con esta función se coloca la valla, aunque algo salió mal, revisar
+	if planta_actual == null:
+		planta_actual = escudo_scene.instantiate()#Lógica igual a sembrar, pero no quiere funcionar!!
+		add_child(planta_actual)
+		print ("valla colocada en la parcela")
+
+	else:
+		print("No lo pongas acá hay algo")

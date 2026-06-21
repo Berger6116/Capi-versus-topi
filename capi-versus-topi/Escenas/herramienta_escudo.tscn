@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bcwlfejw5o0kk"]
+
+[ext_resource type="Script" path="res://Escenas/herramienta_escudo.gd" id="1_qtv1u"]
+[ext_resource type="Texture2D" uid="uid://cdy1h1ffo34yt" path="res://Assets/vallanueva.png" id="2_iutsv"]
+[ext_resource type="PackedScene" uid="uid://cigksl8ii6dv3" path="res://Escenas/d&d_component.tscn" id="3_pyd6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a2wy"]
+size = Vector2(72.770935, 179.26547)
+
+[node name="HerramientaEscudo" type="Node2D" unique_id=299039002]
+script = ExtResource("1_qtv1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=696995917]
+position = Vector2(5.9999924, 4)
+scale = Vector2(0.5, 0.616)
+texture = ExtResource("2_iutsv")
+
+[node name="D&dcomponent" parent="." unique_id=403408535 node_paths=PackedStringArray("sprite") instance=ExtResource("3_pyd6d")]
+sprite = NodePath("../Sprite2D")
+
+[node name="Detector" type="Area2D" parent="." unique_id=786367305]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=188025975]
+position = Vector2(7.000002, 4.000001)
+scale = Vector2(1.3741751, 0.8479045)
+shape = SubResource("RectangleShape2D_6a2wy")

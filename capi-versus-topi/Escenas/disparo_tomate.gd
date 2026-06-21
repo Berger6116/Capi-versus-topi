@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var danio: int = 15
+var danio: int = 10
 var fuerza_disparo: float = 1200.0
 
 func _ready() -> void:
@@ -16,8 +16,10 @@ func _on_screen_exited() -> void:
 	queue_free()
 	
 
-
 func _on_body_entered(body: Node) -> void:
-	if body.has_method ("recibir_danio"):
-		body.recibir_danio(danio)
+	if body is Capi:
+		return
+	
+	if body.has_node ("GestorDeHp"):
+		body.get_node("GestorDeHp").recibir_danio(danio)
 		queue_free()

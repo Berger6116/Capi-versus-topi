@@ -22,6 +22,7 @@ var fase_actual: FasePlanta = FasePlanta.BROTE
 
 
 func _ready() -> void:
+	add_to_group("plantas")
 	actualizar_dibujo()
 	
 func actualizar_dibujo() -> void:
@@ -55,11 +56,27 @@ func regar() -> void:
 		actualizar_dibujo()
 		aparecer_moneda()
 		gestor_hp.actual_hp+=20
+		
+func activar_auto_crecimiento() -> void:
+	var timer_auto_riego = Timer.new()
+	timer_auto_riego.wait_time = 4.0
+	timer_auto_riego.autostart = true
+	add_child(timer_auto_riego)
+	#bind envia el timer como parametro a la funcion del timeout
+	timer_auto_riego.timeout.connect(_on_timer_auto_riego_timeout.bind(timer_auto_riego))
+
+func _on_timer_auto_riego_timeout(timer: Timer) -> void:
+	if fase_actual != FasePlanta.COSECHABLE:
+		regar()
+	else:
+		#borra el timer auto riego
+		timer.queue_free()
 
 func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
 		print("planta cosechada")
 		GameManager.sumar_monedas_huerta(30)
+		GameManager.tomates_cosechados += 1
 		aparecer_moneda()
 		return true
 	else:
