@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_q355b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xs8wh"]
-size = Vector2(11.871458, 37.878788)
+size = Vector2(12.028455, 37.878788)
 
 [node name="CanionTecho" type="Node2D" unique_id=720275177]
 script = ExtResource("2_71802")
@@ -33,7 +33,7 @@ position = Vector2(-273, 651)
 scale = Vector2(0.7199997, 0.55999935)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaVision" unique_id=1603709438]
-position = Vector2(1426.8, 204)
+position = Vector2(1447.8566, 204)
 scale = Vector2(268.24, 10.559999)
 shape = SubResource("RectangleShape2D_xs8wh")
 
