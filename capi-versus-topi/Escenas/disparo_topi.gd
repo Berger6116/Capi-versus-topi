@@ -22,7 +22,6 @@ func _on_area_entered(area: Area2D) -> void:
 			area.recibir_danio(danio)
 			queue_free()
 			return
-			#NUEVO TODO menos el queve y return
 	if area.get_parent() != null and area.get_parent().has_method("recibir_danio"):
 		area.get_parent().recibir_danio(danio)
 		queue_free()

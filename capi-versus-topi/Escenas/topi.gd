@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Topi 
 
 #variables
-var tipo_color: String = "normal"#Nueva para color de topi
+var tipo_color: String = "normal"
 var escena_disparo_topi = preload("res://Escenas/disparo_topi.tscn")
 var vida: int= 30
 var velocidad_actual: float = -80.0
@@ -20,12 +20,13 @@ func _ready() -> void: #Con esto nuevo bajan tomando en cuenta las parcelas y se
 	#$GestorDeHp.area_entered.connect(_on_gestor_de_hp_area_entered)
 	#$GestorDeHp.area_exited.connect(_on_gestor_de_hp_area_exited)
 	# Al final de la función, evaluamos qué color le asignó el Spawner antes de nacer
-	if tipo_color == "verde":#NUEVO ELIGE TOPOS.
-		$AnimationPlayer.play("topi_camina_verde")   # Nombre de tu animación verde
+	if tipo_color == "verde": 
+		$AnimationPlayer.play ("topi_camina_verde")
 	elif tipo_color == "amarillo":
-		$AnimationPlayer.play("topi_camina_amarillo") # Nombre de tu animación amarilla
+		$AnimationPlayer.play ("topi_camina_amarillo")
 	else:
-		$AnimationPlayer.play("topi_camina")          # Tu animación por defecto de la captura
+		$AnimationPlayer.play("topi_camina")
+
 
 func _physics_process(delta: float) -> void:
 	if planta_actual != null:
@@ -56,14 +57,17 @@ func morder_planta() -> void:
 		$ParticulasMordida.restart()
 	
 func recibir_danio(dmg: int) -> void:
-	vida-= dmg
-	print("Topi recibió daño. Vida restante; ", vida)
+	if vida <= 0:
+		return
+	vida -= dmg
+	if vida <= 0:
+		morir() 
 	
 func ponerse_rojo() -> void:
 	estar_enojado = true
 	velocidad_actual = -150.0
+	var tween = create_tween()
 	
-	var tween = create_tween() #NUEVO TWEEN QUE AL FIN FUNCIONAAAA!!!
 	tween.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
 	print("Al fin se calentó este pecho fríooo")
 	
@@ -71,8 +75,20 @@ func morir() -> void:
 	print ("Topi derrotado")
 	
 	GameManager.sumar_puntaje_topos()
+	
+	velocidad_actual = 0.0
+	$TimerAtaque.stop()
+	
+	$CollisionShape2D2.set_deferred("disabled", true)
+	if has_node("GestorDeHp/CollisionShape2D2"):
+		$GestorDeHp/CollisionShape2D2.set_deferred("disabled", true)
+	if has_node("GestorDeHp/CollisionShape2D3"):#NUEVO TODA 
+		$GestorDeHp/CollisionShape2D3.set_deferred("disabled", true)
+	$AnimationPlayer.get_animation ("Topi_muere").loop_mode = 0
+	$AnimationPlayer.play("Topi_muere")
+	await $AnimationPlayer.animation_finished
 	queue_free()
-
+		
 func eliminar_todos_los_topos() -> void:
 	#los topos se eliminan al terminar el nivel
 	queue_free()
@@ -84,13 +100,12 @@ func _on_gestor_de_hp_area_entered(area: Area2D) -> void:
 		$TimerAtaque.stop()
 		empezar_a_morder()
 		
-	elif area is EscudoDefensivo:# NUEVA para detruir al escudo
+	elif area is EscudoDefensivo: #Destruye al Escudo
 		planta_actual = area.get_parent()
 		gestorHp_planta_actual = area
 		$TimerAtaque.stop()
 		empezar_a_morder()
 		
-	
 
 func empezar_a_morder() -> void:
 	while planta_actual != null and is_instance_valid(gestorHp_planta_actual):

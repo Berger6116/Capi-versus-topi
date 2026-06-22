@@ -1,5 +1,5 @@
 extends  Area2D
-class_name EscudoDefensivo #Nueva funcionalidad para protección
+class_name EscudoDefensivo #Funcionalidad para protección
 
 @export var vida_maxima: int = 150
 var vida_actual: int
