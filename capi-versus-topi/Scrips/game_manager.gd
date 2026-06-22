@@ -71,6 +71,7 @@ func registrar_planta_destruida() -> void:
 func activar_game_over() -> void:
 	plantas_destruidas= 0
 	monedas = 0
+	tomates_cosechados = 0
 	limpiar_mejoras()
 	game_over.emit()
 	get_tree().call_deferred("change_scene_to_file", "res://perdiste.tscn")
@@ -85,7 +86,7 @@ func sumar_puntaje_topos():
 func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
-	print("Monedas Actuales: ", monedas)
+	#print("Monedas Actuales: ", monedas)
 	
 func semillas_poderosas_actuales(cantidad: int):
 	semillas_poderosas += cantidad
@@ -99,7 +100,8 @@ func resetear_para_nuevo_nivel():
 	topos_derrotados = 0
 	plantas_destruidas = 0
 	topos_muertos_por_nivel = 0
-	print("variables topos y plantas derrotados a CERO")
+	
+	#print("variables topos y plantas derrotados a CERO")
 	
 func tienda_comprar(item: String) -> bool:
 	var precio = precios_mejoras[item]
@@ -117,4 +119,7 @@ func tienda_comprar(item: String) -> bool:
 func limpiar_mejoras() -> void:
 	for item in mejoras_desbloqueadas:
 		mejoras_desbloqueadas[item] = false
+	semillas_poderosas = 0
+	semillas_poderosas_actuales(0)
+		
 		

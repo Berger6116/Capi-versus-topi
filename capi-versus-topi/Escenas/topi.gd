@@ -78,7 +78,7 @@ func eliminar_todos_los_topos() -> void:
 	queue_free()
 
 func _on_gestor_de_hp_area_entered(area: Area2D) -> void:
-	if area is GestorDeHP:#Nueva linea
+	if area.get_parent() is PlantaBase:#Nueva linea
 		planta_actual = area.get_parent()
 		gestorHp_planta_actual = area
 		$TimerAtaque.stop()
