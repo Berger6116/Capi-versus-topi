@@ -24,6 +24,7 @@ func _ready() -> void:
 		
 	#PARA PROBAR CAÑON:
 	#GameManager.mejoras_desbloqueadas["canion_techo"] = true
+	#GameManager.mejoras_desbloqueadas["herramienta_escudo"] = true
 	#Funcion para Instanciar Mejoras de la tienda
 	instanciar_mejoras()
 	
