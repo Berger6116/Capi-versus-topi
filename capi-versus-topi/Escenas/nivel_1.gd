@@ -11,19 +11,20 @@ extends Node2D
 #Acá despues si va mas ordenado en un HUD se cambia esto:
 @onready var botones_huerta = $MundoHuertaPrueba/BotonesHuerta/ContenedorFade
 var mejora_canion_techo = preload("res://Escenas/canion_techo.tscn")
-@export var desbloquear_valla: bool = false #NUEVA VARIABLE para desbloquear boton en nivel 2
+#@export var desbloquear_valla: bool = false #NUEVA VARIABLE para desbloquear boton en nivel 2
 
 func _ready() -> void:
 	GameManager.topos_muertos_por_nivel = topos_a_derrotar
 	GameManager.actualizar_topos.emit(GameManager.topos_derrotados)
 	GameManager.actualizar_topos.connect(chequear_victoria)
-	if desbloquear_valla: #NUEVO PARA VER LA VALLA
-		botones_huerta.get_node("BotonEscudo").show()
-	else:
-		botones_huerta.get_node("BotonEscudo").hide() #NUEVO OCULTAR ESCUDO.NO SE PORQUE APARECE.
+	#if desbloquear_valla: #NUEVO PARA VER LA VALLA
+	#	botones_huerta.get_node("BotonEscudo").show()
+	#else:
+	#	botones_huerta.get_node("BotonEscudo").hide() #NUEVO OCULTAR ESCUDO.NO SE PORQUE APARECE.
 		
 	#PARA PROBAR CAÑON:
 	#GameManager.mejoras_desbloqueadas["canion_techo"] = true
+	#GameManager.mejoras_desbloqueadas["herramienta_escudo"] = true
 	#Funcion para Instanciar Mejoras de la tienda
 	instanciar_mejoras()
 	
