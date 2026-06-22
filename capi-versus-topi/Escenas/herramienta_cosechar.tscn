@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dwldhkwxjru4j"]
 
 [ext_resource type="Script" uid="uid://b2rpgo7pf0mx3" path="res://Escenas/herramienta_cosechar.gd" id="1_flmdo"]
-[ext_resource type="Texture2D" uid="uid://46ft1geotrga" path="res://Assets/canasta.PNG" id="1_k82as"]
+[ext_resource type="Texture2D" uid="uid://bp2rj4co588m5" path="res://Assets/canasta.PNG" id="1_k82as"]
 [ext_resource type="PackedScene" uid="uid://cigksl8ii6dv3" path="res://Escenas/d&d_component.tscn" id="2_flmdo"]
 [ext_resource type="Shader" uid="uid://d2ri7egm4arn1" path="res://Scrips/brillo_herramientas.gdshader" id="2_kl0sg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sksog"]
 shader = ExtResource("2_kl0sg")
-shader_parameter/glow_intensity = 3.7320001772699998
+shader_parameter/glow_intensity = 3.73200017727
 shader_parameter/glow_color = Color(1, 0.9490196, 0.69803923, 1)
 shader_parameter/glow_width = 16.338000776055
 
