@@ -51,16 +51,16 @@ func _on_timer_disparo_timeout() -> void:
 	pass
 	
 func disparar() -> void:
-	print("Capi disparando...")
+	#print("Capi disparando...")
 	if disparo_capi != null:
 		var nuevo_disparo_capi = disparo_capi.instantiate()
 		nuevo_disparo_capi.global_position = global_position
 		get_parent().add_child(nuevo_disparo_capi)
-		print("fin del disparo")
+		#print("fin del disparo")
 	
 
 func morir() -> void:
-	print("Capi murió... Game Over!!!")
+	#print("Capi murió... Game Over!!!")
 	GameManager.mensaje_derrota = "Perdiste! Capi se quedó sin fuerza para defender la huerta!"
 	GameManager.activar_game_over()
 	queue_free()

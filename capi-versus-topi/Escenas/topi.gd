@@ -51,13 +51,13 @@ func disparar() -> void:
 
 func morder_planta() -> void:
 	if is_instance_valid(gestorHp_planta_actual):
-		print("El topo está mordiendo la planta")
+		#print("El topo está mordiendo la planta")
 		gestorHp_planta_actual.recibir_danio(danio_mordida)
 		$ParticulasMordida.restart()
 	
 func recibir_danio(dmg: int) -> void:
 	vida-= dmg
-	print("Topi recibió daño. Vida restante; ", vida)
+	#print("Topi recibió daño. Vida restante; ", vida)
 	
 func ponerse_rojo() -> void:
 	estar_enojado = true
@@ -65,10 +65,10 @@ func ponerse_rojo() -> void:
 	
 	var tween = create_tween() #NUEVO TWEEN QUE AL FIN FUNCIONAAAA!!!
 	tween.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
-	print("Al fin se calentó este pecho fríooo")
+	#print("Al fin se calentó este pecho fríooo")
 	
 func morir() -> void:
-	print ("Topi derrotado")
+	#print ("Topi derrotado")
 	
 	GameManager.sumar_puntaje_topos()
 	queue_free()
@@ -78,7 +78,7 @@ func eliminar_todos_los_topos() -> void:
 	queue_free()
 
 func _on_gestor_de_hp_area_entered(area: Area2D) -> void:
-	if area is GestorDeHP:#Nueva linea
+	if area.get_parent() is PlantaBase:#Nueva linea
 		planta_actual = area.get_parent()
 		gestorHp_planta_actual = area
 		$TimerAtaque.stop()
