@@ -6,6 +6,7 @@ var monedas: int = 0
 var plantas_destruidas: int = 0
 var limite_de_plantas_para_perder : int= 50 #Si topi rompe 50 plantas Capi pierde
 var tomates_cosechados: int = 0
+var logro_20_plantas_desbloqueado: bool = false
 var ruta_siguiente_nivel: String = ""
 var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
 var mensaje_derrota: String = ""
@@ -127,4 +128,7 @@ func limpiar_mejoras() -> void:
 	semillas_poderosas = 0
 	semillas_poderosas_actuales(0)
 		
-		
+func registrar_cosecha_tomate() -> void:
+	tomates_cosechados += 1
+	if tomates_cosechados >= 20 and not logro_20_plantas_desbloqueado:
+		logro_20_plantas_desbloqueado = true
