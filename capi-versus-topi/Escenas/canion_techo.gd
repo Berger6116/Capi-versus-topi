@@ -24,7 +24,7 @@ func disparar_tomate() -> void:
 
 func _on_area_vision_body_entered(body: Node2D) -> void:
 	if body is Topi:
-		print("topo en area vision del canion")
+		#print("topo en area vision del canion")
 		topos_en_area_vision += 1
 		if timer_canion.is_stopped():
 			timer_canion.start()
@@ -34,5 +34,5 @@ func _on_area_vision_body_exited(body: Node2D) -> void:
 	if body is Topi:
 		topos_en_area_vision -= 1
 		if topos_en_area_vision <= 0:
-			print("ya no hay topos en area vision del canion")
+			#print("ya no hay topos en area vision del canion")
 			timer_canion.stop()
