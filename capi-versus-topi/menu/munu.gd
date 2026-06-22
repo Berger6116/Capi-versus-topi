@@ -5,7 +5,7 @@ func _on_texture_button_3_pressed():
 
 
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/nivel_1.tscn")
+	get_tree().change_scene_to_file("res://mapa.tscn")
 
 
 func _on_exit_pressed() -> void:
