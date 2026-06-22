@@ -5,3 +5,4 @@ func aplicar_herramienta(parcela: ParcelaTierra) -> void:
 	
 func puede_aplicarse_en(parcela: ParcelaTierra) -> bool:
 	return parcela.planta_actual == null
+	

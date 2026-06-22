@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://bv0ifbha5liqj"]
 
 [ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_8cqlv"]
-[ext_resource type="Texture2D" uid="uid://hynlrg7xrd8m" path="res://Assets/Topi_camina_malo.png" id="2_2jxxs"]
+[ext_resource type="Texture2D" uid="uid://b6oobogsgp8gs" path="res://Assets/Topi_camina_malo.png" id="2_2jxxs"]
 [ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
+[ext_resource type="Texture2D" uid="uid://dts0bjmgc30i3" path="res://Assets/Topi_amarillo.png" id="3_xxgs0"]
 [ext_resource type="Texture2D" uid="uid://dvb7qimo5jvpa" path="res://Assets/hojita.png" id="4_2jxxs"]
+[ext_resource type="Texture2D" uid="uid://cbq3ru8vk0rj1" path="res://Assets/Topi_verde.png" id="4_g5jn5"]
+[ext_resource type="Texture2D" uid="uid://bot31ywhya8q6" path="res://Assets/particulaValla.png" id="7_g5jn5"]
 
 [sub_resource type="Animation" id="Animation_2jxxs"]
-length = 1.3666667
+length = 2.5333333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -51,7 +54,7 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.23333335, 0.36666667, 0.5, 0.7, 0.8, 0.9, 1.0333333),
+"times": PackedFloat32Array(0, 0.3, 0.6666667, 0.93333334, 1.2, 1.5666667, 1.8666667, 2.1666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 11, 3, 5, 1, 9, 11, 7]
@@ -59,7 +62,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ke2f3"]
 resource_name = "topi_camina"
-length = 1.7666667
+length = 2.4967
 loop_mode = 1
 step = 0.0333333
 tracks/0/type = "value"
@@ -93,7 +96,7 @@ tracks/2/path = NodePath("Sprite2D:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0666666),
+"times": PackedFloat32Array(0.03333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [3]
@@ -111,10 +114,70 @@ tracks/3/keys = {
 "values": [1, 3, 5, 7, 9, 11]
 }
 
+[sub_resource type="Animation" id="Animation_xxgs0"]
+resource_name = "topi_camina_amarillo"
+length = 2.9333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_xxgs0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.64, 0.92, 1.1, 1.45, 1.7333333, 1.9666667, 2.2666667, 2.58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_g5jn5"]
+resource_name = "topi_camina_verde"
+length = 2.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_g5jn5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.52, 0.73333335, 1.03, 1.28, 1.57, 1.8333334, 2.1, 2.3666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxgs0"]
 _data = {
 &"RESET": SubResource("Animation_2jxxs"),
-&"topi_camina": SubResource("Animation_ke2f3")
+&"topi_camina": SubResource("Animation_ke2f3"),
+&"topi_camina_amarillo": SubResource("Animation_xxgs0"),
+&"topi_camina_verde": SubResource("Animation_g5jn5")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80y2p"]
@@ -137,9 +200,10 @@ script = ExtResource("1_8cqlv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=938770999]
 libraries/ = SubResource("AnimationLibrary_xxgs0")
-autoplay = &"RESET"
+autoplay = &"topi_camina_verde"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1986594708]
+position = Vector2(15.000008, -14.999998)
 texture = ExtResource("2_2jxxs")
 hframes = 4
 vframes = 3
@@ -180,6 +244,26 @@ initial_velocity_max = 344.84
 angle_max = 360.0
 scale_amount_min = 0.0
 color = Color(0.003921569, 0.5764706, 0.15294118, 1)
+color_ramp = SubResource("Gradient_2jxxs")
+
+[node name="ParticulasMordida2" type="CPUParticles2D" parent="." unique_id=1578809360]
+position = Vector2(-217.5, -30)
+emitting = false
+amount = 10
+texture = ExtResource("7_g5jn5")
+one_shot = true
+preprocess = 0.45
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(-50, 0)
+spread = 66.32
+gravity = Vector2(0, 80)
+initial_velocity_min = 53.68
+initial_velocity_max = 344.84
+angle_max = 360.0
+scale_amount_min = 0.0
+color = Color(0.56078434, 0.2901961, 0.047058824, 1)
 color_ramp = SubResource("Gradient_2jxxs")
 
 [connection signal="area_entered" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_entered"]

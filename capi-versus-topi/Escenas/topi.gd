@@ -3,13 +3,14 @@ extends CharacterBody2D
 class_name Topi 
 
 #variables
+var tipo_color: String = "normal"#Nueva para color de topi
 var escena_disparo_topi = preload("res://Escenas/disparo_topi.tscn")
 var vida: int= 30
 var velocidad_actual: float = -80.0
 var estar_enojado: bool = false
 var carriles_y: Array[float] = [695.0,735.0,775.0] #Acá cambian de carril,  Posición de las parcelas
 var ajuste_visual_y: float = -30.0
-var planta_actual: PlantaBase = null
+var planta_actual: Node2D = null
 var gestorHp_planta_actual: Area2D = null
 var danio_mordida: int = 10
 
@@ -18,6 +19,13 @@ func _ready() -> void: #Con esto nuevo bajan tomando en cuenta las parcelas y se
 	global_position.y = carriles_y.pick_random() + ajuste_visual_y 
 	#$GestorDeHp.area_entered.connect(_on_gestor_de_hp_area_entered)
 	#$GestorDeHp.area_exited.connect(_on_gestor_de_hp_area_exited)
+	# Al final de la función, evaluamos qué color le asignó el Spawner antes de nacer
+	if tipo_color == "verde":#NUEVO ELIGE TOPOS.
+		$AnimationPlayer.play("topi_camina_verde")   # Nombre de tu animación verde
+	elif tipo_color == "amarillo":
+		$AnimationPlayer.play("topi_camina_amarillo") # Nombre de tu animación amarilla
+	else:
+		$AnimationPlayer.play("topi_camina")          # Tu animación por defecto de la captura
 
 func _physics_process(delta: float) -> void:
 	if planta_actual != null:
@@ -43,13 +51,16 @@ func disparar() -> void:
 
 func morder_planta() -> void:
 	if is_instance_valid(gestorHp_planta_actual):
-		print("El topo está mordiendo la planta")
+		#print("El topo está mordiendo la planta")
 		gestorHp_planta_actual.recibir_danio(danio_mordida)
-		$ParticulasMordida.restart()
+		if gestorHp_planta_actual is EscudoDefensivo:
+			$ParticulasMordida2.restart()
+		else:
+			$ParticulasMordida.restart()
 	
 func recibir_danio(dmg: int) -> void:
 	vida-= dmg
-	print("Topi recibió daño. Vida restante; ", vida)
+	#print("Topi recibió daño. Vida restante; ", vida)
 	
 func ponerse_rojo() -> void:
 	estar_enojado = true
@@ -57,10 +68,10 @@ func ponerse_rojo() -> void:
 	
 	var tween = create_tween() #NUEVO TWEEN QUE AL FIN FUNCIONAAAA!!!
 	tween.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
-	print("Al fin se calentó este pecho fríooo")
+	#print("Al fin se calentó este pecho fríooo")
 	
 func morir() -> void:
-	print ("Topi derrotado")
+	#print ("Topi derrotado")
 	
 	GameManager.sumar_puntaje_topos()
 	queue_free()
@@ -70,11 +81,19 @@ func eliminar_todos_los_topos() -> void:
 	queue_free()
 
 func _on_gestor_de_hp_area_entered(area: Area2D) -> void:
-	if area.get_parent() is PlantaBase:
+	if area.get_parent() is PlantaBase:#Nueva linea
 		planta_actual = area.get_parent()
 		gestorHp_planta_actual = area
 		$TimerAtaque.stop()
 		empezar_a_morder()
+		
+	elif area is EscudoDefensivo:# NUEVA para detruir al escudo
+		planta_actual = area.get_parent()
+		gestorHp_planta_actual = area
+		$TimerAtaque.stop()
+		empezar_a_morder()
+		
+	
 
 func empezar_a_morder() -> void:
 	while planta_actual != null and is_instance_valid(gestorHp_planta_actual):
@@ -82,7 +101,7 @@ func empezar_a_morder() -> void:
 		await get_tree().create_timer(1.0).timeout
 
 func _on_gestor_de_hp_area_exited(area: Area2D) -> void:
-	if area.get_parent() == planta_actual:
+	if area == gestorHp_planta_actual :
 		planta_actual = null
 		gestorHp_planta_actual = null
 		if is_inside_tree() and $TimerAtaque.is_inside_tree():

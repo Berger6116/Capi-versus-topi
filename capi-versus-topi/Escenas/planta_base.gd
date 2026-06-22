@@ -74,7 +74,7 @@ func _on_timer_auto_riego_timeout(timer: Timer) -> void:
 
 func cosechar() -> bool:
 	if fase_actual == FasePlanta.COSECHABLE:
-		print("planta cosechada")
+		#print("planta cosechada")
 		GameManager.sumar_monedas_huerta(30)
 		GameManager.tomates_cosechados += 1
 		aparecer_moneda()
@@ -84,7 +84,7 @@ func cosechar() -> bool:
 
 func recibir_danio(dmg:int) -> void:
 	vida-=dmg
-	print("planta recibió daño")
+	#print("planta recibió daño")
 	
 	var sprite_activo : Sprite2D = null
 	if sprite_brote.visible: sprite_activo = sprite_brote
@@ -112,7 +112,7 @@ func aparecer_moneda():
 	#print("Moneda creada en: ", global_position)
 
 func morir() -> void:
-	print("el topo mató la planta")
+	#print("el topo mató la planta")
 	
 	if GameManager.has_method("registrar_planta_destruida"):
 		GameManager.registrar_planta_destruida()
