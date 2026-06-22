@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4fkc6a76isnf"]
 
-[ext_resource type="Script" uid="uid://djhdgmh4unwsr" path="res://logo.gd" id="1_hgdat"]
+[ext_resource type="Script" uid="uid://djhdgmh4unwsr" path="res://Escenas/logo.gd" id="1_hgdat"]
 [ext_resource type="Texture2D" uid="uid://b2d3q4kq0fm57" path="res://botones/logo.png" id="1_iyh20"]
 
 [node name="logo" type="Control" unique_id=302483482]

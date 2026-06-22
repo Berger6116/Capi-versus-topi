@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h33oy07a5gwk"]
 
-[ext_resource type="Script" uid="uid://cuoc1qstm0d6l" path="res://perdiste.gd" id="1_d53tk"]
+[ext_resource type="Script" uid="uid://cuoc1qstm0d6l" path="res://Escenas/perdiste.gd" id="1_d53tk"]
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_6iysm"]
 [ext_resource type="Texture2D" uid="uid://d2l313lxt40vd" path="res://botones/ir_al_mapa.png" id="3_6iysm"]
 [ext_resource type="Texture2D" uid="uid://uh62tgfekti3" path="res://Assets/nivel_fallado.png" id="3_jwnfd"]
