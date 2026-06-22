@@ -11,6 +11,7 @@ var ruta_siguiente_nivel: String = ""
 var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
 var mensaje_derrota: String = ""
 var semillas_poderosas: int = 0
+var logro_rico_desbloqueado: bool = false
 
 #Diccionario de mejoras para comprar con monedas:
 var mejoras_desbloqueadas: Dictionary ={
@@ -132,3 +133,9 @@ func registrar_cosecha_tomate() -> void:
 	tomates_cosechados += 1
 	if tomates_cosechados >= 20 and not logro_20_plantas_desbloqueado:
 		logro_20_plantas_desbloqueado = true
+
+func obtener_total_logros() -> int:
+	var cuenta = 0
+	if logro_20_plantas_desbloqueado: cuenta += 1
+	if logro_rico_desbloqueado: cuenta += 1
+	return cuenta

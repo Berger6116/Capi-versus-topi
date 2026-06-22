@@ -103,4 +103,4 @@ func chequear_victoria (topos_muertos: int) -> void:
 		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
 		GameManager.ruta_siguiente_nivel = siguiente_escena
 		#SALTAR A PANTALLA DE VICTORIA:
-		get_tree().call_deferred("change_scene_to_file", "res://nivel_1_completado.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://Escenas/nivel_1_completado.tscn")

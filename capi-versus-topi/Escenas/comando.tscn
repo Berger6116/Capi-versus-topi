@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ctq5v3l5ekvgo"]
+
+[ext_resource type="Texture2D" uid="uid://c6d0okdevymsn" path="res://botones/comandos.png" id="1_4w4xi"]
+
+[node name="comando" type="Control" unique_id=1119066687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=608302044]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4w4xi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=512518066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)

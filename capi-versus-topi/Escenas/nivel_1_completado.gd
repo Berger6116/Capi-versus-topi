@@ -16,14 +16,13 @@ func _on_siguiente_nivel_pressed() -> void:
 
 
 func _ready() -> void:
+	if GameManager.monedas >= 1000:
+		GameManager.logro_rico_desbloqueado = true
 	label_monedas_final.text = str(GameManager.monedas)
 	label_tomates_final.text = str(GameManager.tomates_cosechados)
+	var logros_conseguidos = GameManager.obtener_total_logros()
+	logro_nodo.text = str(logros_conseguidos) + " / 2"
 	logro_nodo.visible = true
-	if GameManager.logro_20_plantas_desbloqueado:
-		logro_nodo.text = "1 / 3"
-	else:
-		logro_nodo.text = "0 / 3"
-
 
 func _on_ir_a_mapa_pressed() -> void:
 	GameManager.resetear_para_nuevo_nivel() 
