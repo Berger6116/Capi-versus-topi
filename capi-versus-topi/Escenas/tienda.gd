@@ -12,7 +12,7 @@ func _ready() -> void:
 func actualizar_botones() -> void:
 	boton_canion.disabled = GameManager.mejoras_desbloqueadas["canion_techo"] or GameManager.monedas < GameManager.precios_mejoras["canion_techo"]
 	boton_super_semillas.disabled = GameManager.mejoras_desbloqueadas["semillas_poderosas"] or GameManager.monedas < GameManager.precios_mejoras["semillas_poderosas"]
-	boton_escudo.disabled = GameManager.mejoras_desbloqueadas["arma_mejorada"] or GameManager.monedas < GameManager.precios_mejoras["arma_mejorada"]
+	boton_escudo.disabled = GameManager.mejoras_desbloqueadas["herramienta_escudo"] or GameManager.monedas < GameManager.precios_mejoras["herramienta_escudo"]
 	
 	boton_canion.modulate = Color(0.5, 0.5, 0.5) if boton_canion.disabled else Color(1, 1, 1)
 	boton_super_semillas.modulate = Color(0.5, 0.5, 0.5) if boton_super_semillas.disabled else Color(1, 1, 1)
@@ -26,11 +26,13 @@ func _on_texture_button_pressed() -> void:
 
 func _on_texture_button_2_pressed() -> void:
 	GameManager.tienda_comprar("semillas_poderosas")
+	if GameManager.mejoras_desbloqueadas["semillas_poderosas"] == true:
+		GameManager.semillas_poderosas_actuales(10)
 	actualizar_botones()
 	
 
 func _on_texture_button_3_pressed() -> void:
-	GameManager.tienda_comprar("arma_mejorada")
+	GameManager.tienda_comprar("herramienta_escudo")
 	actualizar_botones()
 
 

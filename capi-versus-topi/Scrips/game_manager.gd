@@ -9,18 +9,19 @@ var tomates_cosechados: int = 0
 var ruta_siguiente_nivel: String = ""
 var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
 var mensaje_derrota: String = ""
+var semillas_poderosas: int = 0
 
 #Diccionario de mejoras para comprar con monedas:
 var mejoras_desbloqueadas: Dictionary ={
 	"canion_techo": false,
 	"semillas_poderosas": false, # inventar planta nueva
-	"arma_mejorada": false # inventar arma nueva
+	"herramienta_escudo": false # inventar arma nueva
 }
 #diccionario para los precios:
 var precios_mejoras: Dictionary={
 	"canion_techo": 150,
 	"semillas_poderosas": 100, # inventar planta nueva
-	"arma_mejorada": 100 # inventar arma nueva
+	"herramienta_escudo": 100 # inventar arma nueva
 }
 
 #SEÑALES
@@ -29,6 +30,7 @@ signal actualizar_topos(cantidad: int)
 signal actualizar_monedas(cantidad: int)
 signal game_over
 signal pausar_despausar(estado: bool)
+signal actualizar_semillas_poderosas(cantidad: int)
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -84,6 +86,14 @@ func sumar_monedas_huerta(cantidad: int):
 	monedas += cantidad
 	actualizar_monedas.emit(monedas)
 	print("Monedas Actuales: ", monedas)
+	
+func semillas_poderosas_actuales(cantidad: int):
+	semillas_poderosas += cantidad
+	if semillas_poderosas <= 0:
+		semillas_poderosas = 0
+		mejoras_desbloqueadas["semillas_poderosas"] = false
+		
+	actualizar_semillas_poderosas.emit(semillas_poderosas)
 
 func resetear_para_nuevo_nivel():
 	topos_derrotados = 0

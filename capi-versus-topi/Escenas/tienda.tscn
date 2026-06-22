@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxuwudpudawuu" path="res://Assets/botonCanion.png" id="7_56r47"]
 [ext_resource type="Texture2D" uid="uid://de64kp5d23a8n" path="res://botones/siguiente_nivel.png" id="7_lpnfq"]
 [ext_resource type="Texture2D" uid="uid://bfdhkjddup50i" path="res://Assets/botonSuperSemillas.png" id="8_lvtqr"]
-[ext_resource type="Texture2D" uid="uid://bqy00nrhf00n8" path="res://Assets/BotonEscudo.png" id="9_56r47"]
+[ext_resource type="Texture2D" uid="uid://bay80kd4qrg7h" path="res://Assets/BotonEscudo.png" id="9_56r47"]
 
 [node name="Tienda" type="Node2D" unique_id=727019992]
 script = ExtResource("1_a2w3w")
@@ -74,7 +74,7 @@ offset_left = 47.826088
 offset_top = 242.3913
 offset_right = 297.82608
 offset_bottom = 298.91302
-text = "$100"
+text = "x10 = $100"
 label_settings = ExtResource("4_lpnfq")
 horizontal_alignment = 1
 vertical_alignment = 1
