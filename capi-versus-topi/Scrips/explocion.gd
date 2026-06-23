@@ -1,4 +1,4 @@
 extends AudioStreamPlayer2D
 
 
-@onready var explocion =$explocion
+#@onready var explocion =$explocion
