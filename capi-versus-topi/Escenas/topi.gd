@@ -13,6 +13,7 @@ var ajuste_visual_y: float = -30.0
 var planta_actual: Node2D = null
 var gestorHp_planta_actual: Area2D = null
 var danio_mordida: int = 10
+var tween_enojo: Tween = null
 
 #Funciones
 func _ready() -> void: #Con esto nuevo bajan tomando en cuenta las parcelas y se acomodan visualmente
@@ -71,13 +72,15 @@ func recibir_danio(dmg: int) -> void:
 func ponerse_rojo() -> void:
 	estar_enojado = true
 	velocidad_actual = -150.0
-	var tween = create_tween()
+	tween_enojo = create_tween()
 	
-	tween.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
+	tween_enojo.tween_property($Sprite2D,"modulate", Color(1,0,0),0.5)
 	#print("Al fin se calentó este pecho fríooo")
 	
 func morir() -> void:
 	#print ("Topi derrotado")
+	if tween_enojo and tween_enojo.is_valid():
+		tween_enojo.kill()
 	$Sprite2D.modulate = Color(1, 1, 1)
 	GameManager.sumar_puntaje_topos()
 	
