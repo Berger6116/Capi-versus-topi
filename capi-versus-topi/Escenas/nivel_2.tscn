@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_5us05"]
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="4_udchn"]
 [ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="5_jtfu3"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_wm566"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_wm566"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="7_ypue5"]
+[ext_resource type="AudioStream" uid="uid://d4cxkvxc43nmd" path="res://musica_sfx/nivel_2.mp3" id="8_5us05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbn1r"]
 
@@ -15,7 +16,6 @@ script = ExtResource("1_mbn1r")
 topos_a_derrotar = 20
 tiempo_huerta = 20.0
 siguiente_escena = "uid://ck8s6rl8v8bjd"
-desbloquear_valla = true
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=1144822905]
 position = Vector2(1763, 540)
@@ -67,3 +67,7 @@ shape = SubResource("RectangleShape2D_mbn1r")
 debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
 
 [node name="capavictoria" type="CanvasLayer" parent="." unique_id=2120758840]
+
+[node name="Nivel2" type="AudioStreamPlayer" parent="." unique_id=293497026]
+stream = ExtResource("8_5us05")
+autoplay = true

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://kisja1bd06io" path="res://Escenas/capi.gd" id="1_axr24"]
 [ext_resource type="Texture2D" uid="uid://b8ax7xbblnud0" path="res://Assets/capi.png" id="2_axr24"]
 [ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_3rg3t"]
+[ext_resource type="AudioStream" uid="uid://dd8p1yhgrixkx" path="res://sfx/disparo.mp3" id="4_iascw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iascw"]
 radius = 8.742004
@@ -44,6 +45,10 @@ wait_time = 2.0
 position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_3rg3t")
 debug_color = Color(0.9386184, 0.1948868, 0.39987773, 0.41960785)
+
+[node name="SonidoDisparo" type="AudioStreamPlayer" parent="." unique_id=911162850]
+stream = ExtResource("4_iascw")
+max_polyphony = 3
 
 [connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
 [connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]

@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://cpqu365ys34hf" path="res://Escenas/topi.gd" id="1_8cqlv"]
 [ext_resource type="Texture2D" uid="uid://b6oobogsgp8gs" path="res://Assets/Topi_camina_malo.png" id="2_2jxxs"]
 [ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_80y2p"]
-[ext_resource type="Texture2D" uid="uid://xhsntps2slin" path="res://Assets/topi_muere.png" id="3_g5jn5"]
-[ext_resource type="Texture2D" uid="uid://c25t66531ljwp" path="res://Assets/Topi_amarillo.png" id="3_xxgs0"]
+[ext_resource type="Texture2D" uid="uid://d4jnl6kmc6w00" path="res://Assets/topi_muere.png" id="3_g5jn5"]
+[ext_resource type="Texture2D" uid="uid://dts0bjmgc30i3" path="res://Assets/Topi_amarillo.png" id="3_xxgs0"]
 [ext_resource type="Texture2D" uid="uid://dvb7qimo5jvpa" path="res://Assets/hojita.png" id="4_2jxxs"]
 [ext_resource type="Texture2D" uid="uid://cbq3ru8vk0rj1" path="res://Assets/Topi_verde.png" id="4_g5jn5"]
 [ext_resource type="Texture2D" uid="uid://bot31ywhya8q6" path="res://Assets/particulaValla.png" id="7_g5jn5"]
+[ext_resource type="AudioStream" uid="uid://dd8p1yhgrixkx" path="res://sfx/disparo.mp3" id="9_kliib"]
 
 [sub_resource type="Animation" id="Animation_2jxxs"]
 length = 2.5333333
@@ -342,6 +343,10 @@ angle_max = 360.0
 scale_amount_min = 0.0
 color = Color(0.56078434, 0.2901961, 0.047058824, 1)
 color_ramp = SubResource("Gradient_2jxxs")
+
+[node name="SonidoDisparo" type="AudioStreamPlayer" parent="." unique_id=1637904738]
+stream = ExtResource("9_kliib")
+max_polyphony = 3
 
 [connection signal="area_entered" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_entered"]
 [connection signal="area_exited" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_exited"]

@@ -8,3 +8,4 @@ script = ExtResource("1_dev56")
 
 [node name="dimantes" type="AudioStreamPlayer2D" parent="." unique_id=120714390]
 stream = ExtResource("1_vv7gg")
+autoplay = true
