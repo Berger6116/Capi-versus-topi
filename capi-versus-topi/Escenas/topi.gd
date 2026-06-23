@@ -50,6 +50,7 @@ func disparar() -> void:
 	var bala = escena_disparo_topi.instantiate()
 	bala.global_position = global_position
 	get_tree().current_scene.add_child(bala)
+	$SonidoDisparo.play()
 
 func morder_planta() -> void:
 	if is_instance_valid(gestorHp_planta_actual):

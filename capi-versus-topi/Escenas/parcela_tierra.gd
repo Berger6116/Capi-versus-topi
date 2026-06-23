@@ -33,6 +33,7 @@ func sembrar_super_semilla() -> void:
 func regar() -> void:
 	if planta_actual != null:
 		planta_actual.regar()
+		$SonidoRegar.play()
 	else:
 		print("error al regar")
 		
@@ -43,6 +44,7 @@ func cosechar() -> void:
 		if se_cosecho:
 			planta_actual.queue_free()
 			planta_actual = null
+			$SonidoCosechar.play()
 		else:
 			print("no se pudo cosechar")
 			

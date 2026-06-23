@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://bb6ufffrxu87"]
 
+[ext_resource type="AudioStream" uid="uid://i814uufg86t8" path="res://sfx/regar las plantas.mp3" id="1_cuutf"]
+
 [node name="Node2D" type="Node2D" unique_id=1745204047]
 
 [node name="regar las platas" type="AudioStreamPlayer2D" parent="." unique_id=666809122]
+stream = ExtResource("1_cuutf")
+autoplay = true

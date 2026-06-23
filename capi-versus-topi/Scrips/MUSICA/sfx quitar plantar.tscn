@@ -6,3 +6,4 @@
 
 [node name="quitar plamtas" type="AudioStreamPlayer2D" parent="." unique_id=955448958]
 stream = ExtResource("1_c65ea")
+autoplay = true

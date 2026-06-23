@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://be04kyv33spgh" path="res://botones/setting_oscuro.png" id="6_kaj2x"]
 [ext_resource type="Texture2D" uid="uid://blxvauircd4hg" path="res://botones/back.png" id="8_mnd48"]
 [ext_resource type="Texture2D" uid="uid://dpppbmqu3mmv7" path="res://botones/back_oscuro.png" id="9_7k04b"]
+[ext_resource type="AudioStream" uid="uid://cco0oaklf7f7r" path="res://musica_sfx/musica_menu.mp3" id="11_kaj2x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ssn6d"]
 
@@ -78,6 +79,10 @@ offset_bottom = 669.0
 texture_normal = ExtResource("8_mnd48")
 texture_pressed = ExtResource("9_7k04b")
 texture_hover = ExtResource("9_7k04b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=984572868]
+stream = ExtResource("11_kaj2x")
+autoplay = true
 
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

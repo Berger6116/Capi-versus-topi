@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bucj5oyxyjs2e" path="res://botones/exit_oscuro.png" id="8_q2nsx"]
 [ext_resource type="Texture2D" uid="uid://cym40cuiubf0r" path="res://botones/volumen.png" id="9_pjtjr"]
 [ext_resource type="Texture2D" uid="uid://bcb38upnqdcay" path="res://botones/volumen_oscuro.png" id="10_di6ss"]
+[ext_resource type="AudioStream" uid="uid://cco0oaklf7f7r" path="res://musica_sfx/musica_menu.mp3" id="11_013ub"]
 
 [node name="menu_setting" type="Control" unique_id=283260163]
 layout_mode = 3
@@ -86,6 +87,10 @@ grow_vertical = 2
 scale = Vector2(1.218214, 1.2451682)
 texture_normal = ExtResource("9_pjtjr")
 texture_hover = ExtResource("10_di6ss")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2029469136]
+stream = ExtResource("11_013ub")
+autoplay = true
 
 [connection signal="pressed" from="command" to="." method="_on_command_pressed"]
 [connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]

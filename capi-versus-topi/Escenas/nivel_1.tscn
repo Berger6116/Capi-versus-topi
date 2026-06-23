@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dkrkjq3kkdrtm" path="res://Assets/BG_1.png" id="2_hid1b"]
 [ext_resource type="PackedScene" uid="uid://cxw065dy06eeb" path="res://Escenas/capi.tscn" id="3_os1ql"]
 [ext_resource type="Script" uid="uid://b0tel4kbcad6i" path="res://Escenas/spawner_topos.gd" id="5_lswwr"]
-[ext_resource type="FontFile" uid="uid://b3wff4tgo2anj" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_l8lnw"]
+[ext_resource type="FontFile" uid="uid://dt26tqnbpbtxh" path="res://tipografias/LuckiestGuy-Regular.ttf" id="6_l8lnw"]
 [ext_resource type="PackedScene" uid="uid://duenmj8ivln36" path="res://Escenas/mundoHuerta_prueba.tscn" id="6_llk6u"]
 [ext_resource type="LabelSettings" uid="uid://npsdjyyktbs6" path="res://tipografias/mensajes_label_settings.tres" id="7_l8lnw"]
+[ext_resource type="AudioStream" uid="uid://c8y5fwf6df5sr" path="res://musica_sfx/nivel_1.mp3" id="8_rbs6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8lnw"]
 
@@ -65,3 +66,7 @@ shape = SubResource("RectangleShape2D_l8lnw")
 debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
 
 [node name="capavictoria" type="CanvasLayer" parent="." unique_id=1968741784]
+
+[node name="Nivel1" type="AudioStreamPlayer" parent="." unique_id=1552104770]
+stream = ExtResource("8_rbs6h")
+autoplay = true

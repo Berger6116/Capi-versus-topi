@@ -57,6 +57,7 @@ func disparar() -> void:
 		nuevo_disparo_capi.global_position = global_position
 		get_parent().add_child(nuevo_disparo_capi)
 		#print("fin del disparo")
+		$SonidoDisparo.play()
 	
 
 func morir() -> void:
