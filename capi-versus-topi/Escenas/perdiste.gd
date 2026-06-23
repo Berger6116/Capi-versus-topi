@@ -15,3 +15,7 @@ func _on_volver_a_intentar_pressed() -> void:
 	GameManager.tomates_cosechados = 0
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Escenas/nivel_1.tscn")
+
+
+func _on_ir_a_mapa_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/mapa.tscn")

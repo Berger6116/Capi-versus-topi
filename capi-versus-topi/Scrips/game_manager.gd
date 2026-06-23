@@ -76,7 +76,7 @@ func activar_game_over() -> void:
 	tomates_cosechados = 0
 	limpiar_mejoras()
 	game_over.emit()
-	get_tree().call_deferred("change_scene_to_file", "res://perdiste.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Escenas/perdiste.tscn")
 	
 		
 #SEPARO EL PUNTAJE DE TOPOS DERROTADOS DE LAS MONEDAS QUE VA A DAR LA HUERTA

@@ -26,4 +26,4 @@ func _ready() -> void:
 
 func _on_ir_a_mapa_pressed() -> void:
 	GameManager.resetear_para_nuevo_nivel() 
-	get_tree().change_scene_to_file("res://mapa.tscn")
+	get_tree().change_scene_to_file("res://Escenas/mapa.tscn")

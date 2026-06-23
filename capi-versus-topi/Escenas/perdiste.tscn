@@ -91,3 +91,4 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="volver_a_intentar" to="." method="_on_volver_a_intentar_pressed"]
+[connection signal="pressed" from="ir_a_mapa" to="." method="_on_ir_a_mapa_pressed"]
