@@ -78,7 +78,7 @@ func ponerse_rojo() -> void:
 	
 func morir() -> void:
 	#print ("Topi derrotado")
-	
+	$Sprite2D.modulate = Color(1, 1, 1)
 	GameManager.sumar_puntaje_topos()
 	
 	velocidad_actual = 0.0

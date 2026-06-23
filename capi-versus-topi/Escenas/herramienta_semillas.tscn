@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://r4ld66xqojq8"]
 
 [ext_resource type="Script" uid="uid://c0gdbs2oy5icm" path="res://Escenas/herramienta_semillas.gd" id="1_n68nk"]
-[ext_resource type="Texture2D" uid="uid://1al6ljf64fk0" path="res://Assets/bolsa.png" id="2_n68nk"]
+[ext_resource type="Texture2D" uid="uid://dmtwbm8rwixs8" path="res://Assets/bolsa.png" id="2_n68nk"]
 [ext_resource type="Shader" uid="uid://d2ri7egm4arn1" path="res://Scrips/brillo_herramientas.gdshader" id="2_ugsyh"]
 [ext_resource type="PackedScene" uid="uid://cigksl8ii6dv3" path="res://Escenas/d&d_component.tscn" id="3_8vguc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8vguc"]
 shader = ExtResource("2_ugsyh")
-shader_parameter/glow_intensity = 3.7320001772699998
+shader_parameter/glow_intensity = 3.73200017727
 shader_parameter/glow_color = Color(1, 0.95, 0.7, 1)
 shader_parameter/glow_width = 20.0
 
