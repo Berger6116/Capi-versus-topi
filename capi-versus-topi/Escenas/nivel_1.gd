@@ -102,5 +102,6 @@ func chequear_victoria (topos_muertos: int) -> void:
 		spawner_topos.eliminar_topos_restantes.emit()
 		#AVISA AL GAME MANAGER CUAL ES EL SIGUIENTE NIVEL:
 		GameManager.ruta_siguiente_nivel = siguiente_escena
+		GameManager.nivel_1_completado = true
 		#SALTAR A PANTALLA DE VICTORIA:
 		get_tree().call_deferred("change_scene_to_file", "res://Escenas/nivel_1_completado.tscn")
