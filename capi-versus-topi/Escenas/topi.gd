@@ -63,8 +63,10 @@ func recibir_danio(dmg: int) -> void:
 	if vida <= 0:
 		return
 	vida -= dmg
-	if vida <= 0:
-		morir() 
+	#Se estaba duplicando la muerte, 
+	#esto en realidad lo maneja el gestor de HP
+	#if vida <= 0:
+	#	morir() 
 	
 func ponerse_rojo() -> void:
 	estar_enojado = true
