@@ -60,6 +60,7 @@ texture_pressed = SubResource("CompressedTexture2D_ssn6d")
 texture_hover = ExtResource("4_mnd48")
 
 [node name="setting" type="TextureButton" parent="." unique_id=1804605924]
+visible = false
 custom_minimum_size = Vector2(50, 20)
 offset_left = 835.0
 offset_top = 433.0
@@ -72,10 +73,10 @@ texture_hover = ExtResource("6_kaj2x")
 ignore_texture_size = true
 
 [node name="backMenu" type="TextureButton" parent="." unique_id=626308287]
-offset_left = 839.0
-offset_top = 541.0
-offset_right = 1089.0
-offset_bottom = 669.0
+offset_left = 844.0
+offset_top = 485.0
+offset_right = 1094.0
+offset_bottom = 613.0
 texture_normal = ExtResource("8_mnd48")
 texture_pressed = ExtResource("9_7k04b")
 texture_hover = ExtResource("9_7k04b")
