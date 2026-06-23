@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bpr2x37kk1dwc" path="res://botones/credit_oscuro.png" id="4_kj0dl"]
 [ext_resource type="Texture2D" uid="uid://b7do4euy4ciwp" path="res://botones/setting.png" id="7_pjlxb"]
 [ext_resource type="Texture2D" uid="uid://be04kyv33spgh" path="res://botones/setting_oscuro.png" id="8_0u7e5"]
-[ext_resource type="AudioStream" uid="uid://j71n03kcx83x" path="res://musica_sfx/musica_menu.mp3" id="9_rph6x"]
+[ext_resource type="AudioStream" uid="uid://cco0oaklf7f7r" path="res://musica_sfx/musica_menu.mp3" id="9_rph6x"]
 [ext_resource type="Texture2D" uid="uid://c6spp53yyduss" path="res://botones/exit.png" id="9_ycqwp"]
 [ext_resource type="Texture2D" uid="uid://bucj5oyxyjs2e" path="res://botones/exit_oscuro.png" id="10_rph6x"]
 
