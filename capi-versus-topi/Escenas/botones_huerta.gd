@@ -11,12 +11,10 @@ func _ready() -> void:
 		$ContenedorFade/BotonEscudo.show()
 	else:
 		$ContenedorFade/BotonEscudo.hide()
-	if GameManager.mejoras_desbloqueadas["semillas_poderosas"] == true:
-		GameManager.actualizar_semillas_poderosas.connect(actualizar_hud_semillas)
-		actualizar_hud_semillas(GameManager.semillas_poderosas)
-		$ContenedorFade/SemillasPoderosasLabel.show()
-	else:
-		$ContenedorFade/SemillasPoderosasLabel.hide()
+	
+	GameManager.actualizar_semillas_poderosas.connect(actualizar_hud_semillas)
+	actualizar_hud_semillas(GameManager.semillas_poderosas)
+	
 		
 func actualizar_hud_semillas(cantidad: int) -> void:
 	if cantidad > 0:
@@ -25,6 +23,7 @@ func actualizar_hud_semillas(cantidad: int) -> void:
 	else:
 		$ContenedorFade/BotonSemillas.texture_normal = load("res://Assets/botonSemillas.png")
 		$ContenedorFade/SemillasPoderosasLabel.text = ""
+		$ContenedorFade/SemillasPoderosasLabel.hide()
 		
 
 		
