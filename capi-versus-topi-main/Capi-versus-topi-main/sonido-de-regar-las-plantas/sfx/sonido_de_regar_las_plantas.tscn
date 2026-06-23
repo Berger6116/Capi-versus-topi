@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwkxgvsyh88oi"]
+
+[ext_resource type="AudioStream" uid="uid://d0p3ct2667t2u" path="res://sfx/Water drop sound effect - SoundEffectz.mp3" id="1_rn1w2"]
+[ext_resource type="Script" uid="uid://byjgfc6q607w5" path="res://sfx/script/regar.gd" id="2_1ql4p"]
+
+[node name="Node" type="Node" unique_id=52911258]
+
+[node name="regar" type="AudioStreamPlayer2D" parent="." unique_id=1093289123]
+stream = ExtResource("1_rn1w2")
+script = ExtResource("2_1ql4p")
