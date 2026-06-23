@@ -12,6 +12,7 @@ var topos_muertos_por_nivel: int = 10 #Acá puse la cantidad del nivel 1
 var mensaje_derrota: String = ""
 var semillas_poderosas: int = 0
 var logro_rico_desbloqueado: bool = false
+var nivel_1_completado: bool = false
 
 #Diccionario de mejoras para comprar con monedas:
 var mejoras_desbloqueadas: Dictionary ={
