@@ -293,7 +293,7 @@ script = ExtResource("1_axr24")
 libraries/ = SubResource("AnimationLibrary_s2dw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176498707]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("2_axr24")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659155779]
