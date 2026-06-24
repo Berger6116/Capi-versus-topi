@@ -95,6 +95,7 @@ func morir() -> void:
 		$GestorDeHp/CollisionShape2D3.set_deferred("disabled", true)
 	$AnimationPlayer.get_animation ("Topi_muere").loop_mode = 0
 	$AnimationPlayer.play("Topi_muere")
+	$SonidoMuerte.play()
 	await $AnimationPlayer.animation_finished
 	queue_free()
 		
