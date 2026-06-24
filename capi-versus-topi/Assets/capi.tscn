@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cxw065dy06eeb"]
 
 [ext_resource type="Script" uid="uid://kisja1bd06io" path="res://Escenas/capi.gd" id="1_axr24"]
-[ext_resource type="Texture2D" uid="uid://b8ax7xbblnud0" path="res://Assets/capi.png" id="2_axr24"]
+[ext_resource type="Texture2D" uid="uid://dni5uo5fowc50" path="res://Assets/capi.png" id="2_axr24"]
 [ext_resource type="Texture2D" uid="uid://u7l5dfs678hu" path="res://Assets/animacion capi/capi_agachado.png" id="3_0f4i1"]
 [ext_resource type="PackedScene" uid="uid://d2q57cftl67tj" path="res://Escenas/gestor_de_hp.tscn" id="3_3rg3t"]
 [ext_resource type="Texture2D" uid="uid://cn3xcibcphmlr" path="res://Assets/animacion capi/capi derrotado.png" id="3_iascw"]
 [ext_resource type="Texture2D" uid="uid://bd4kbxhk4etyx" path="res://Assets/animacion capi/capi lanzando.png" id="3_ykc51"]
-[ext_resource type="AudioStream" uid="uid://svd7kag343kv" path="res://sfx/pala.wav" id="7_gj5jj"]
 
 [sub_resource type="Animation" id="Animation_ykc51"]
 length = 0.001
@@ -320,9 +319,6 @@ wait_time = 2.0
 position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_3rg3t")
 debug_color = Color(0.9386184, 0.1948868, 0.39987773, 0.41960785)
-
-[node name="SonidoDisparo" type="AudioStreamPlayer" parent="." unique_id=492641389]
-stream = ExtResource("7_gj5jj")
 
 [connection signal="body_entered" from="AreaVision" to="." method="_on_area_vision_body_entered"]
 [connection signal="body_exited" from="AreaVision" to="." method="_on_area_vision_body_exited"]
