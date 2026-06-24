@@ -1,4 +1,4 @@
 extends Node2D
 
 
-@onready var quitarplantas =$quitarplanta
+#@onready var quitarplantas =$quitarplanta

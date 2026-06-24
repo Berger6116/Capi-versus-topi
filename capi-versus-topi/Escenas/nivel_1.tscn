@@ -69,4 +69,5 @@ debug_color = Color(0.660971, 0, 0.36298633, 0.41960785)
 
 [node name="Nivel1" type="AudioStreamPlayer" parent="." unique_id=1552104770]
 stream = ExtResource("8_rbs6h")
+volume_db = -10.0
 autoplay = true

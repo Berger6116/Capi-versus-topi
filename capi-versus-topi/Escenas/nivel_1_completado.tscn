@@ -83,6 +83,7 @@ text = "0000"
 
 [node name="Victoria" type="AudioStreamPlayer" parent="." unique_id=468023530]
 stream = ExtResource("7_c6ky1")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="pressed" from="siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]
