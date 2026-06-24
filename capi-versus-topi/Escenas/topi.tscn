@@ -351,7 +351,7 @@ max_polyphony = 3
 
 [node name="SonidoMuerte" type="AudioStreamPlayer" parent="." unique_id=267104232]
 stream = ExtResource("10_rxxur")
-volume_db = 24.0
+volume_db = 15.0
 max_polyphony = 3
 
 [connection signal="area_entered" from="GestorDeHp" to="." method="_on_gestor_de_hp_area_entered"]
